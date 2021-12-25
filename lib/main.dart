@@ -8,12 +8,12 @@ import 'DatabaseManager.dart';
 import 'home.dart';
 import 'package:untitled/login.dart';
 import 'essen.dart';
+import 'new.dart';
 import 'sportart.dart';
 import 'auth.dart';
 
 
 void main() async {
-
 
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
@@ -32,8 +32,6 @@ void main() async {
   );
 
 }
-
-//hiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii
 
 
 
@@ -58,8 +56,6 @@ class MyApp extends StatelessWidget {
       ],
       child: MaterialApp(
           debugShowCheckedModeBanner:false,
-
-
         home: AuthWrapper(),
       ),
     );

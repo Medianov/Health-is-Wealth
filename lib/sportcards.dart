@@ -1,230 +1,9 @@
 import 'package:flutter/material.dart';
 
-class essenzunahme1 extends StatelessWidget {
 
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-
-        title: Text(
-          'Zunahme Rezept',
-          style: TextStyle(
-            fontSize: 20.0,
-            fontWeight: FontWeight.bold,
-            letterSpacing: 2.0,
-            color: Colors.white,
-          ),
-        ),
-        centerTitle: true,
-        backgroundColor: Colors.deepPurple,
-        elevation: 0,
-      ),
-      body: Container(
-        decoration: BoxDecoration(
-            image: DecorationImage(
-              image: AssetImage('assets/Essen.jpg'),
-              fit: BoxFit.cover,
-              colorFilter: ColorFilter.mode(Colors.black45, BlendMode.darken),
-            )),
-        child: Padding(
-          padding: const EdgeInsets.all(20.0),
-          child: Card(
-            borderOnForeground: true,
-            clipBehavior: Clip.hardEdge,
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(50),
-            ),
-            child:
-            Column(
-
-                children: [
-                  Ink.image(
-                    image: AssetImage('assets/1.png'),
-                    height: 160,
-
-
-                    fit: BoxFit.cover,
-                  ),
-
-                  Expanded(
-                    child: Padding(
-                      padding: EdgeInsetsDirectional.only(start:8.0,end:8.0,top:8.0  ,bottom: 25.0),
-                      child: ListView(
-                          scrollDirection: Axis.vertical,
-                          children: [
-
-                            Text('Eiweissbrot-Sandwich mit Raeuchertofu, Avocado & Sprossen',
-
-                              style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                color: Colors.black,
-                                fontSize: 15,
-                              ),
-                            ),
-                            SizedBox(
-                              height:10,
-                            ),
-                            Text('Zutaten:',
-
-
-                              style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                decoration: TextDecoration.underline,
-                                color: Colors.black,
-                                fontSize: 15,
-                              ),
-                            ),
-                            SizedBox(
-                              height:10,
-                            ),
-                            Text('1 EL Sonnenblumenoel',
-
-                              style: TextStyle(
-                                color: Colors.black,
-                                fontSize: 15,
-                              ),
-                            ),
-                            Text('8 Scheibe(n) Eiweissbrot herzhaft',
-
-                              style: TextStyle(
-                                color: Colors.black,
-                                fontSize: 15,
-                              ),
-                            ),
-                            Text('0.5 Gurke',
-
-                              style: TextStyle(
-                                color: Colors.black,
-                                fontSize: 15,
-                              ),
-                            ),
-                            Text('1 Tomate',
-
-                              style: TextStyle(
-                                color: Colors.black,
-                                fontSize: 15,
-                              ),
-                            ),
-                            Text('1 Zitrone',
-
-                              style: TextStyle(
-                                color: Colors.black,
-                                fontSize: 15,
-                              ),
-                            ),
-                            Text('2 Avocados',
-
-                              style: TextStyle(
-                                color: Colors.black,
-                                fontSize: 15,
-                              ),
-                            ),
-                            Text('Salz',
-
-                              style: TextStyle(
-                                color: Colors.black,
-                                fontSize: 15,
-                              ),
-                            ),
-
-                            Text('Pfeffer',
-
-                              style: TextStyle(
-                                color: Colors.black,
-                                fontSize: 15,
-                              ),
-                            ),
-                            Text('100 g Sprossen (z.B. Alfalfa-Sprossen)',
-
-                              style: TextStyle(
-                                color: Colors.black,
-                                fontSize: 15,
-                              ),
-                            ),
-                            Text('2 EL vegane Mayonnaise',
-
-                              style: TextStyle(
-                                color: Colors.black,
-                                fontSize: 15,
-                              ),
-                            ),
-                            SizedBox(
-                              height:10,
-                            ),
-                            Text('Zubereitung:',
-
-                              style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                decoration: TextDecoration.underline,
-
-                                color: Colors.black,
-                                fontSize: 15,
-                              ),
-                            ),
-                            SizedBox(
-                              height:10,
-                            ),
-                            Text('1. Den Raeuchertofu in 0,5 cm dicke Streifen schneiden und in einer beschichteten Pfanne mit oel knusprig braun braten.'
-                                ' Tofu beiseite legen und das Eiweissbrot in der Pfanne von beiden Seiten kurz anroesten.',
-
-                              style: TextStyle(
-                                color: Colors.black,
-                                fontSize: 15,
-                              ),
-                            ),
-                            SizedBox(
-                              height:5,
-                            ),
-                            Text('2. Gurke und Tomate waschen, den Strunk der Tomate entfernen und beides in feine Scheiben schneiden. '
-                                'Die Zitrone halbieren und den Saft auspressen. Die Avocados halbieren, den Kern entfernen und das Fruchtfleisch aus der ',
-
-                              style: TextStyle(
-                                color: Colors.black,
-                                fontSize: 15,
-                              ),
-                            ),
-                            SizedBox(
-                              height:5,
-                            ),
-                            Text('3. Avocado und Zitronensaft mit einem Puerierstab zu einer feinen Creme puerieren und mit Salz und Pfeffer abschmecken.',
-
-                              style: TextStyle(
-                                color: Colors.black,
-                                fontSize: 15,
-                              ),
-                            ),
-                            SizedBox(
-                              height:5,
-                            ),
-                            Text('4. Die Haelfte der Brotscheiben mit der Avocadocreme bestreichen und mit Raeuchertofu, Tomate, Gurke und Sprossen belegen. Die restlichen Brotscheiben duenn mit veganer Mayonnaise bestreichen und damit das Sandwich zuklappen. Sandwich diagonal halbieren.',
-
-                              style: TextStyle(
-                                color: Colors.black,
-                                fontSize: 15,
-                              ),
-                            ),
-
-
-
-
-                          ]
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-
-
-
-          ),
-        ),
-      ),
-    );
-  }
-}
 
 class sportabnahme1 extends StatelessWidget {
+  sportabnahme1({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -381,6 +160,7 @@ class sportabnahme1 extends StatelessWidget {
 }
 
 class sportabnahme2 extends StatelessWidget {
+  sportabnahme2({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -502,7 +282,11 @@ class sportabnahme2 extends StatelessWidget {
                           SizedBox(
                             height:10,
                           ),
-                          Text('Auch wenn sich Nordic Walking mittlerweile einen festen Platz in der Hitliste der Deutschen erobern konnte, so sieht es doch immer wieder etwas merkwürdig aus, wenn sich erwachsene Personen an einem heißen Sommertag mit Stöcken bewaffnet ihren Weg über Asphalt in der Stadt oder einem Waldboden bahnen. Doch unabhängig von der Optik ist Nordic Walking eine großartige Sportart für Einsteiger. Der Stoffwechsel, das Herz und der Kreislauf werden durch die Aktivität des gesamten Körpers so richtig in Schwung gebracht und die Kalorien schmelzen vor sich hin. Durch die fließenden Bewegungen werden die Gelenke geschont. Außerdem stärkt Nordic Walking den Rücken, macht fit und kräftigt Arme und Schultern. Kurzum: Nordic Walking ist ein perfektes Workout für den gesamten Kör-per und dazu noch ideal geeignet, um schnelle Abnehmerfolge zu erzielen.',
+                          Text('Auch wenn sich Nordic Walking mittlerweile einen festen Platz in der Hitliste der Deutschen erobern konnte, '
+                              'so sieht es doch immer wieder etwas merkwuerdig aus, wenn sich erwachsene Personen an einem heissen Sommertag mit Stoecken bewaffnet ihren Weg ueber Asphalt in der Stadt oder einem Waldboden bahnen. '
+                              'Doch unabhaengig von der Optik ist Nordic Walking eine grossartige Sportart fuer Einsteiger. Der Stoffwechsel, das Herz und der Kreislauf werden durch die Aktivitaet des gesamten Koerpers so richtig in Schwung gebracht und die Kalorien schmelzen vor sich hin.'
+                              ' Durch die fliessenden Bewegungen werden die Gelenke geschont. Ausserdem staerkt Nordic Walking den Ruecken, macht fit und kraeftigt Arme und Schultern. '
+                              'Kurzum: Nordic Walking ist ein perfektes Workout fuer den gesamten Koerper und dazu noch ideal geeignet, um schnelle Abnehmerfolge zu erzielen.',
 
                             style: TextStyle(
                               color: Colors.black,
@@ -530,6 +314,7 @@ class sportabnahme2 extends StatelessWidget {
 }
 
 class sportabnahme3 extends StatelessWidget {
+  sportabnahme3({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -651,8 +436,8 @@ class sportabnahme3 extends StatelessWidget {
                           SizedBox(
                             height:10,
                           ),
-                          Text('Radfahren ist nicht nur schonend für die Gelenke, sondern in Kombination mit Aktivität an der frischen Luft auch ein Kraft-Elixier für die Seele.'
-                              ' Zugleich ist Radfahren aber auch eine sehr effektive Option, um den Pfunden auf der Waage zu Leibe zu rücken. '
+                          Text('Radfahren ist nicht nur schonend fuer die Gelenke, sondern in Kombination mit Aktivitaet an der frischen Luft auch ein Kraft-Elixier fuer die Seele.'
+                              ' Zugleich ist Radfahren aber auch eine sehr effektive Option, um den Pfunden auf der Waage zu Leibe zu ruecken. '
                               'Eine Stunde auf dem Drahtesel verbrennt zwischen 300 und 400 Kalorien.',
 
                             style: TextStyle(
@@ -663,11 +448,11 @@ class sportabnahme3 extends StatelessWidget {
                           SizedBox(
                             height:5,
                           ),
-                          Text('Spielt das Wetter einmal nicht mit und regnet es aus Kübeln, just, '
-                              'wenn man sich auf den Sattel schwingen wollte, dann lässt sich das Radfahren auch ins Trockene nach Innen verlegen. '
+                          Text('Spielt das Wetter einmal nicht mit und regnet es aus Kuebeln, just, '
+                              'wenn man sich auf den Sattel schwingen wollte, dann laesst sich das Radfahren auch ins Trockene nach Innen verlegen. '
                               'Viele Fitnessstudios bieten Spinning an; im Grunde ist dies wie Radfahren, nur eben Indoor. '
-                              'Spinning ist im Vergleich zu gemütlichem Radfahren eher eine schweißtreibende Angelegenheit. '
-                              'In der Folge leert der Kör-per – ähnlich wie bei zügigem Joggen – zunächst die Kohlenhydratspeicher, ehe er sich an den Fettreserven bedient',
+                              'Spinning ist im Vergleich zu gemuetlichem Radfahren eher eine schweisstreibende Angelegenheit. '
+                              'In der Folge leert der Koerper  aehnlich wie bei zuegigem Joggen  zunaechst die Kohlenhydratspeicher, ehe er sich an den Fettreserven bedient',
 
                             style: TextStyle(
                               color: Colors.black,
@@ -678,10 +463,10 @@ class sportabnahme3 extends StatelessWidget {
                             height:5,
                           ),
                           Text('Beim Radfahren und dem Spinning gilt, dass die richtige Sitzposition sehr wichtig ist, damit es wirklich bei einer gelenkschonenden Sportart bleibt. '
-                              'Einfache Regel für das Einstellen des Sattels: Beim Treten sollten die Beine niemals voll durchgestreckt sein.'
-                              'Anfänger starten beim Training draußen am besten mit flachen Strecken und einer moderaten Geschwindigkeit – '
+                              'Einfache Regel fuer das Einstellen des Sattels: Beim Treten sollten die Beine niemals voll durchgestreckt sein.'
+                              'Anfaenger starten beim Training draussen am besten mit flachen Strecken und einer moderaten Geschwindigkeit '
                               'beim Spinning Indoor entsprechend mit einem niedrigen Widerstand.'
-                              ' Nach und nach lässt sich die Herausforderung an den Körper dann steigern.',
+                              ' Nach und nach laesst sich die Herausforderung an den Koerper dann steigern.',
 
                             style: TextStyle(
                               color: Colors.black,
@@ -709,6 +494,7 @@ class sportabnahme3 extends StatelessWidget {
 }
 
 class sportabnahme4 extends StatelessWidget {
+  sportabnahme4({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -830,10 +616,10 @@ class sportabnahme4 extends StatelessWidget {
                           SizedBox(
                             height:10,
                           ),
-                          Text('Vor allem, wenn Sie ein paar Kilo mehr auf den Hüften haben, ist Schwimmen als Sportart ideal für Sie geeignet. '
-                              'Dieser Sport ist nicht nur gelenkschonend, sondern macht Spaß und lässt die Pfunde dahinschmelzen. '
-                              'Schwimmen ist gewissermaßen ein Ganzkörper-Workout. Sie trainieren beim Schwimmen sämtliche wichtigen Muskelgruppen und '
-                              'spüren bei der Anstrengung lediglich ein Sechstel Ihres Körpergewichts –'
+                          Text('Vor allem, wenn Sie ein paar Kilo mehr auf den Hueften haben, ist Schwimmen als Sportart ideal fuer Sie geeignet. '
+                              'Dieser Sport ist nicht nur gelenkschonend, sondern macht Spass und laesst die Pfunde dahinschmelzen. '
+                              'Schwimmen ist gewissermassen ein Ganzkoerper-Workout. Sie trainieren beim Schwimmen saemtliche wichtigen Muskelgruppen und '
+                              'spueren bei der Anstrengung lediglich ein Sechstel Ihres Koerpergewichts'
                               ' wenn Sie also beispielsweise 120 Kilogramm auf die Waage bringen, merken Sie im Wasser nur 20 Kilogramm davon.',
                             style: TextStyle(
                               color: Colors.black,
@@ -843,10 +629,10 @@ class sportabnahme4 extends StatelessWidget {
                           SizedBox(
                             height:5,
                           ),
-                          Text('Als Einsteiger starten Sie am besten mit Brustschwimmen in gemäßigtem Tempo. '
-                              'Nach und nach und mit steigendem Fitnesslevel können Sie dann auch andere Stile, wie etwa Kraulen oder Rückenschwimmen ausprobieren. '
-                              'Sie werden feststellen, dass die eine oder andere Disziplin durchaus fordernd ist und es tatsächlich möglich ist, auch im Wasser zu schwitzen.'
-                              'In einigen Schwimmbädern werden mittlerweile spezielle Gymnastik-Kurse unter Wasser angeboten, mit denen sich gezielt verschiedene Problemzonen '
+                          Text('Als Einsteiger starten Sie am besten mit Brustschwimmen in gemaessigtem Tempo. '
+                              'Nach und nach und mit steigendem Fitnesslevel koennen Sie dann auch andere Stile, wie etwa Kraulen oder Rueckenschwimmen ausprobieren. '
+                              'Sie werden feststellen, dass die eine oder andere Disziplin durchaus fordernd ist und es tatsaechlich moeglich ist, auch im Wasser zu schwitzen.'
+                              'In einigen Schwimmbaedern werden mittlerweile spezielle Gymnastik-Kurse unter Wasser angeboten, mit denen sich gezielt verschiedene Problemzonen '
                               '(Stichwort: Bauch-Beine-Po) straffen lassen.',
 
                             style: TextStyle(
@@ -875,6 +661,8 @@ class sportabnahme4 extends StatelessWidget {
 }
 
 class sportabnahme5 extends StatelessWidget {
+  sportabnahme5({Key? key}) : super(key: key);
+
 
   @override
   Widget build(BuildContext context) {
@@ -996,10 +784,10 @@ class sportabnahme5 extends StatelessWidget {
                           SizedBox(
                             height:10,
                           ),
-                          Text('Aktiv sein kann auch Spaß machen. Das glauben Sie nicht? Sollte dem so sein, dann haben Sie wahrscheinlich bisher noch nicht lateinamerikanische Tänze, '
+                          Text('Aktiv sein kann auch Spass machen. Das glauben Sie nicht? Sollte dem so sein, dann haben Sie wahrscheinlich bisher noch nicht lateinamerikanische Taenze, '
                               'Zumba oder auch Aerobic probiert. Bei diesen Sportarten purzeln nicht nur die Pfunde, sondern das Stimmungsbarometer steigt. '
-                              'Schlechtes Wetter gibt es fürs Tanzen in einer Tanzschule nicht.'
-                              'Mit tänzerischen Sportarten können Sie Ihr Gleichgewicht und die Koordination schulen und gleichzeitig die Fettverbrennung ankurbeln.',
+                              'Schlechtes Wetter gibt es fuers Tanzen in einer Tanzschule nicht.'
+                              'Mit taenzerischen Sportarten koennen Sie Ihr Gleichgewicht und die Koordination schulen und gleichzeitig die Fettverbrennung ankurbeln.',
 
                             style: TextStyle(
                               color: Colors.black,
@@ -1009,8 +797,8 @@ class sportabnahme5 extends StatelessWidget {
                           SizedBox(
                             height:5,
                           ),
-                          Text('Auch für Aerobic im Fitnessstudio gilt die Ausrede schlechtes Wetter nicht.'
-                              'Die Bewegung mit Gleichgesinnten macht nicht nur Freude, es lassen sich auch neue Kontakte knüpfen .',
+                          Text('Auch fuer Aerobic im Fitnessstudio gilt die Ausrede schlechtes Wetter nicht.'
+                              'Die Bewegung mit Gleichgesinnten macht nicht nur Freude, es lassen sich auch neue Kontakte knuepfen .',
 
                             style: TextStyle(
                               color: Colors.black,
@@ -1038,6 +826,7 @@ class sportabnahme5 extends StatelessWidget {
 }
 
 class sportabnahme6 extends StatelessWidget {
+  sportabnahme6({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -1159,9 +948,9 @@ class sportabnahme6 extends StatelessWidget {
                           SizedBox(
                             height:10,
                           ),
-                          Text('Für Anfänger sind 2-3 Trainingseinheiten/Woche am sinnvollsten. Fortgeschrittene Sportler trainieren 3-5 mal pro Woche.'
-                              'Fitnesssport ist nicht nur etwas für Gesunde. '
-                              'Denn in vielen Fällen trägt moderater Sport zur Besserung von Krankheiten bei.',
+                          Text('Fuer Anfaenger sind 2-3 Trainingseinheiten/Woche am sinnvollsten. Fortgeschrittene Sportler trainieren 3-5 mal pro Woche.'
+                              'Fitnesssport ist nicht nur etwas fuer Gesunde. '
+                              'Denn in vielen Faellen traegt moderater Sport zur Besserung von Krankheiten bei.',
                             style: TextStyle(
                               color: Colors.black,
                               fontSize: 15,

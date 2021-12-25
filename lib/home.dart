@@ -3,8 +3,6 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:provider/provider.dart';
-import 'package:untitled/sportart.dart';
-
 import 'dart:core';
 import 'DatabaseManager.dart';
 import 'auth.dart';
@@ -1106,7 +1104,6 @@ class _HomeState extends State<Home> {
     gewichtController.clear();
     alterController.clear();
   }
-
 
 }
 

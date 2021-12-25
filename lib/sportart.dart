@@ -1,23 +1,17 @@
 import 'dart:async';
-
 import 'package:android_alarm_manager/android_alarm_manager.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_app_name/flutter_app_name.dart';
 import 'package:intl/intl.dart';
 import 'package:pedometer/pedometer.dart';
 import 'package:provider/src/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:vector_math/vector_math_64.dart' as math;
+import 'RadialProgress.dart';
 import 'DatabaseManager.dart';
-import 'DatabaseManager.dart';
-import 'Essenclasses.dart';
+import 'package:untitled/sportcards.dart';
 import 'auth.dart';
-import 'package:cron/cron.dart';
 
-import 'new.dart';
 
 
 
@@ -26,12 +20,10 @@ String formatDate(DateTime d) {
 }
 
 
-
 class Sportart extends StatefulWidget {
 
 
-
-  const Sportart({Key? key}) : super(key: key);
+     Sportart({Key? key}) : super(key: key);
 
   @override
   _SportartState createState() => _SportartState();
@@ -41,10 +33,7 @@ class Sportart extends StatefulWidget {
 
 class _SportartState extends State<Sportart> {
 
-
   String time ='?';
-  Timer? timer;
-
   late Stream<StepCount> _stepCountStream;
   late Stream<PedestrianStatus> _pedestrianStatusStream;
   String _status = '?';
@@ -78,136 +67,11 @@ class _SportartState extends State<Sportart> {
     getNots();
     initPlatformState();
 
-
-  }
-
-  updateschrittzaehler() async {
-    await Firebase.initializeApp();
-    DatabaseManager().updateUserList2(
-        neusteps,
-        reichweite,
-        kalorie,
-        userID
-    );
-    print('updateschrittzaehler');
-  }
-
-  Future setUserList2() async {
-    await Firebase.initializeApp();
-    User? user =  FirebaseAuth.instance.currentUser;
-    String dateString = DateTime.now().toString();
-    var dateTime = DateTime.parse(dateString);
-    var date = "${dateTime.minute}-${dateTime.hour}-${dateTime.day}-${dateTime.month}-${dateTime.year}";
-    await FirebaseFirestore.instance.collection("user").doc(user!.uid).collection('schrittzaehler Angaben').doc(date).set(
-        {
-          'schritte': null,
-          'reichweite': null,
-          'Kcal': null,
-
-        }).then((value){
-      print('setUserList2');
-    });
   }
 
 
-  fetchUserInfo() async {
-    final now = DateTime.now();
-    time = DateFormat('dd-MM-yyyy').format(now);
-    User? get = await FirebaseAuth.instance.currentUser;
-    userID = get!.uid;
-    db_email = get.email!;
-
-  }
-  getData() async{
-    User? user =  FirebaseAuth.instance.currentUser;
-    userID = user!.uid;
-    await FirebaseFirestore.instance.collection("user").doc(user.uid).get().then((db){
 
 
-
-      return [
-        db.data()!['Aktivitaet']== null ? db_Aktivitaet = '--' : db_Aktivitaet = db.data()!['Aktivitaet'],
-        db.data()!['groesse in Cm']== null ? db_groesse = '0.0' : db_groesse = db.data()!['groesse in Cm'] ,
-        db.data()!['alter']== null ? db_alter = '0.0' : db_alter = db.data()!['alter'] ,
-        db.data()!['geschlecht']== null ? db_geschlecht = '--' : db_geschlecht = db.data()!['geschlecht'] ,
-        db.data()!['ziel']== null ? db_ziel = '--' : db_ziel = db.data()!['ziel'] ,
-        db.data()!['gewicht in Kg']== null ? db_gewicht = '0.0' : db_gewicht = db.data()!['gewicht in Kg'] ,
-        db.data()!['zielkey']== null ? ziel = '0' : ziel = db.data()!['zielkey'] ,
-
-      ];
-    });
-    setState(() {
-    });
-  }
-
-  void reset(){
-
-    setsteps(_steps);
-  }
-
-  void onStepCount(StepCount event) {
-
-    print(event);
-
-    setState(() {
-      _steps = event.steps;
-      timer = Timer.periodic(Duration(minutes:3), (tm) {
-        updatesteps(_steps);
-      });
-      if(altUserId != userID){
-
-        setuserid(userID);
-        setsteps(_steps);
-        setsteps();
-        print('steps is 0');
-
-      }
-      int neu = _steps - savedsteps;
-      neusteps = neu ;
-      double km = (neusteps* 0.77);
-      String r = km.toStringAsFixed(2);
-      double kcal = (neusteps*0.039);
-      String k = kcal.toStringAsFixed(2);
-      reichweite = r;
-      kalorie = k;
-    });
-
-
-  }
-
-  void onPedestrianStatusChanged(PedestrianStatus event) {
-    print(event);
-    setState(() {
-      _status = event.status;
-    });
-  }
-
-  void onPedestrianStatusError(error) {
-    print('onPedestrianStatusError: $error');
-    setState(() {
-      _status = 'Pedestrian Status not available';
-    });
-    print(_status);
-  }
-
-  void onStepCountError(error) {
-    print('onStepCountError: $error');
-    setState(() {
-      _steps = 0;
-    });
-  }
-
-  void initPlatformState() {
-    _pedestrianStatusStream = Pedometer.pedestrianStatusStream;
-    _pedestrianStatusStream
-        .listen(onPedestrianStatusChanged)
-        .onError(onPedestrianStatusError);
-
-    _stepCountStream = Pedometer.stepCountStream;
-    _stepCountStream.listen(onStepCount).onError(onStepCountError);
-
-    if (!mounted) return;
-  }
 
 
 
@@ -701,7 +565,7 @@ class _SportartState extends State<Sportart> {
                       height:25,
                     ),
                     Center(
-                      child: _RadialProgress(
+                      child: RadialProgress(
                         width: width*110,
                         height: height*110,
                         progress:  neusteps == 0.0
@@ -776,10 +640,11 @@ class _SportartState extends State<Sportart> {
                       height: 30,
                     ),
                     SingleChildScrollView(
-                      scrollDirection: Axis.vertical,
-                      child: Column(
+                      scrollDirection: Axis.horizontal,
+
+                      child: Wrap(
+
                         children: <Widget>[
-                          for (int i = 0; i < 7; i++)
                           Padding(
                             padding: EdgeInsets.all(12),
                             child: allgemaeineSport(),
@@ -797,13 +662,6 @@ class _SportartState extends State<Sportart> {
         ),
       );
 
-  }
-  void getNots() async {
-    final SharedPreferences pref = await SharedPreferences.getInstance();
-    setState(() {
-      savedsteps = pref.getInt('savedsteps')!;
-      altUserId = pref.getString('saveId')!;
-    });
   }
 
   Row passendeSport() {
@@ -1339,49 +1197,279 @@ class _SportartState extends State<Sportart> {
                 Stack(
                   children: [
                     Ink.image(
-                      image: AssetImage('assets/Fit.jpg'),
+                      image: AssetImage('assets/sportabnahme1.png'),
                       height: 160,
-                      width: 150,
+                      width: 162,
                       fit: BoxFit.cover,
                     ),
-                    Positioned(
-                      bottom: 16,
-                      right: 16,
-                      left: 16,
+                  ],
+
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(6.0),
+                  child: Container(
+                    color: Colors.white,
+                    width: 150,
+                    height:60,
+                    child: Center(
                       child: Text(
-                        'Gesund1',
+                        'Joggen',
                         style: TextStyle(
+                          fontSize: 15.0,
                           fontWeight: FontWeight.bold,
                           color: Colors.black,
-                          fontSize: 24,
                         ),
                       ),
                     ),
-                  ],
-                ),
-                Padding(
-                  padding: EdgeInsets.all(16).copyWith(bottom: 0),
-                  child: Text(
-                    'abnahme',
-                    style: TextStyle(fontSize: 16),
                   ),
                 ),
-                ButtonBar(
-                  alignment: MainAxisAlignment.start,
-                  children: [
-                    FlatButton(
-                      child: Text('gut'),
-                      onPressed: () {},
-                    ),
-                    FlatButton(
-                      child: Text('schlecht'),
-                      onPressed: () {},
-                    )
-                  ],
-                )
+
+                TextButton(
+                  child: Text('mehr'),
+                  onPressed: (){Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => sportabnahme1()));},
+                ),
+
               ],
             ),
+            margin: EdgeInsets.only(left: 20.0, right: 20.0,top : 5.0),
           ),
+          Card(
+            clipBehavior: Clip.antiAlias,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(24),
+            ),
+            child: Column(
+              children: [
+                Stack(
+                  children: [
+                    Ink.image(
+                      image: AssetImage('assets/sportabnahme2.png'),
+                      height: 160,
+                      width: 162,
+                      fit: BoxFit.cover,
+                    ),
+                  ],
+
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(6.0),
+                  child: Container(
+                    color: Colors.white,
+                    width: 150,
+                    height:60,
+                    child: Center(
+                      child: Text(
+                        'Nordic Walking',
+                        style: TextStyle(
+                          fontSize: 15.0,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.black,
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+
+                TextButton(
+                  child: Text('mehr'),
+                  onPressed: (){Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => sportabnahme2()));},
+                ),
+
+              ],
+            ),
+            margin: EdgeInsets.only(left: 20.0, right: 20.0,top : 5.0),
+          ),
+          Card(
+            clipBehavior: Clip.antiAlias,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(24),
+            ),
+            child: Column(
+              children: [
+                Stack(
+                  children: [
+                    Ink.image(
+                      image: AssetImage('assets/sportabnahme3.png'),
+                      height: 160,
+                      width: 162,
+                      fit: BoxFit.cover,
+                    ),
+                  ],
+
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(6.0),
+                  child: Container(
+                    color: Colors.white,
+                    width: 150,
+                    height:60,
+                    child: Center(
+                      child: Text(
+                        'Radfahren oder Spinning',
+                        style: TextStyle(
+                          fontSize: 15.0,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.black,
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+
+                TextButton(
+                  child: Text('mehr'),
+                  onPressed: (){Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => sportabnahme3()));},
+                ),
+
+              ],
+            ),
+            margin: EdgeInsets.only(left: 20.0, right: 20.0,top : 5.0),
+          ),
+          Card(
+            clipBehavior: Clip.antiAlias,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(24),
+            ),
+            child: Column(
+              children: [
+                Stack(
+                  children: [
+                    Ink.image(
+                      image: AssetImage('assets/sportabnahme4.png'),
+                      height: 160,
+                      width: 162,
+                      fit: BoxFit.cover,
+                    ),
+                  ],
+
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(6.0),
+                  child: Container(
+                    color: Colors.white,
+                    width: 150,
+                    height:60,
+                    child: Center(
+                      child: Text(
+                        'Schwimmen',
+                        style: TextStyle(
+                          fontSize: 15.0,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.black,
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+
+                TextButton(
+                  child: Text('mehr'),
+                  onPressed: (){Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => sportabnahme4()));},
+                ),
+
+              ],
+            ),
+            margin: EdgeInsets.only(left: 20.0, right: 20.0,top : 5.0),
+          ),
+          Card(
+            clipBehavior: Clip.antiAlias,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(24),
+            ),
+            child: Column(
+              children: [
+                Stack(
+                  children: [
+                    Ink.image(
+                      image: AssetImage('assets/sportabnahme5.png'),
+                      height: 160,
+                      width: 162,
+                      fit: BoxFit.cover,
+                    ),
+                  ],
+
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(6.0),
+                  child: Container(
+                    color: Colors.white,
+                    width: 150,
+                    height:60,
+                    child: Center(
+                      child: Text(
+                        'Aerobic, Tanzen, Zumba',
+                        style: TextStyle(
+                          fontSize: 15.0,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.black,
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+
+                TextButton(
+                  child: Text('mehr'),
+                  onPressed: (){Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => sportabnahme5()));},
+                ),
+
+              ],
+            ),
+            margin: EdgeInsets.only(left: 20.0, right: 20.0,top : 5.0),
+          ),
+          Card(
+            clipBehavior: Clip.antiAlias,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(24),
+            ),
+            child: Column(
+              children: [
+                Stack(
+                  children: [
+                    Ink.image(
+                      image: AssetImage('assets/sportabnahme6.png'),
+                      height: 160,
+                      width: 162,
+                      fit: BoxFit.cover,
+                    ),
+                  ],
+
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(6.0),
+                  child: Container(
+                    color: Colors.white,
+                    width: 150,
+                    height:60,
+                    child: Center(
+                      child: Text(
+                        'In der Fitness Sport treiben',
+                        style: TextStyle(
+                          fontSize: 15.0,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.black,
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+
+                TextButton(
+                  child: Text('mehr'),
+                  onPressed: (){Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => sportabnahme6()));},
+                ),
+
+              ],
+            ),
+            margin: EdgeInsets.only(left: 20.0, right: 20.0,top : 5.0),
+          ),
+
           Card(
             clipBehavior: Clip.antiAlias,
             shape: RoundedRectangleBorder(
@@ -1554,40 +1642,105 @@ class _SportartState extends State<Sportart> {
     }
   }
 
-}
+  fetchUserInfo() async {
+    final now = DateTime.now();
+    time = DateFormat('dd-MM-yyyy').format(now);
+    User? get = await FirebaseAuth.instance.currentUser;
+    userID = get!.uid;
+    db_email = get.email!;
 
-class _RadialProgress extends StatelessWidget {
-  final double height, width, progress;
-
-
-   _RadialProgress(
-      {Key? key,
-      required this.height,
-      required this.width,
-      required this.progress,
-      })
-      : super(key: key);
-
-
-
-  @override
-
-  Widget build(BuildContext context) {
-    return CustomPaint(
-      painter: _RadialPainter(
-        progress: progress,
-      ),
-      child: Container(
-        height: height,
-        width: width,
-        child: Center(
-          child: Icon(Icons.directions_run,color: Colors.white,),
-
-        ),
-      ),
-    );
   }
 
+  getData() async{
+    User? user =  FirebaseAuth.instance.currentUser;
+    userID = user!.uid;
+    await FirebaseFirestore.instance.collection("user").doc(user.uid).get().then((db){
+
+
+
+      return [
+        db.data()!['Aktivitaet']== null ? db_Aktivitaet = '--' : db_Aktivitaet = db.data()!['Aktivitaet'],
+        db.data()!['groesse in Cm']== null ? db_groesse = '0.0' : db_groesse = db.data()!['groesse in Cm'] ,
+        db.data()!['alter']== null ? db_alter = '0.0' : db_alter = db.data()!['alter'] ,
+        db.data()!['geschlecht']== null ? db_geschlecht = '--' : db_geschlecht = db.data()!['geschlecht'] ,
+        db.data()!['ziel']== null ? db_ziel = '--' : db_ziel = db.data()!['ziel'] ,
+        db.data()!['gewicht in Kg']== null ? db_gewicht = '0.0' : db_gewicht = db.data()!['gewicht in Kg'] ,
+        db.data()!['zielkey']== null ? ziel = '0' : ziel = db.data()!['zielkey'] ,
+
+      ];
+    });
+    setState(() {
+    });
+  }
+
+  void getNots() async {
+    final SharedPreferences pref = await SharedPreferences.getInstance();
+    setState(() {
+      savedsteps = pref.getInt('savedsteps')!;
+      altUserId = pref.getString('saveId')!;
+    });
+  }
+
+  void onStepCount(StepCount event) {
+
+    print(event);
+
+    setState(() {
+      _steps = event.steps;
+      updatesteps(_steps);
+      if(altUserId != userID){
+
+        setuserid(userID);
+        setsteps(_steps);
+        print('steps is 0');
+
+      }
+      int neu = _steps - savedsteps;
+      neusteps = neu ;
+      double km = (neusteps* 0.77);
+      String r = km.toStringAsFixed(2);
+      double kcal = (neusteps*0.039);
+      String k = kcal.toStringAsFixed(2);
+      reichweite = r;
+      kalorie = k;
+    });
+
+
+  }
+
+  void onPedestrianStatusChanged(PedestrianStatus event) {
+    print(event);
+    setState(() {
+      _status = event.status;
+    });
+  }
+
+  void onPedestrianStatusError(error) {
+    print('onPedestrianStatusError: $error');
+    setState(() {
+      _status = 'Pedestrian Status not available';
+    });
+    print(_status);
+  }
+
+  void onStepCountError(error) {
+    print('onStepCountError: $error');
+    setState(() {
+      _steps = 0;
+    });
+  }
+
+  void initPlatformState() {
+    _pedestrianStatusStream = Pedometer.pedestrianStatusStream;
+    _pedestrianStatusStream
+        .listen(onPedestrianStatusChanged)
+        .onError(onPedestrianStatusError);
+
+    _stepCountStream = Pedometer.stepCountStream;
+    _stepCountStream.listen(onStepCount).onError(onStepCountError);
+
+    if (!mounted) return;
+  }
 
 }
 
@@ -1595,36 +1748,6 @@ class _RadialProgress extends StatelessWidget {
 
 
 
-class _RadialPainter extends CustomPainter {
-  final double progress;
-
-  _RadialPainter({required this.progress});
-
-  @override
-  void paint(Canvas canvas, Size size) {
-    Paint paint = Paint()
-      ..strokeWidth = 6
-      ..color =Colors.deepPurple
-      ..style = PaintingStyle.stroke
-      ..strokeCap = StrokeCap.round;
-
-    Offset center = Offset(size.width / 2, size.height / 2);
-    double relativeProgress = 360 * progress;
-
-    canvas.drawArc(
-      Rect.fromCircle(center: center, radius: size.width / 2),
-      math.radians(-90),
-      math.radians(-relativeProgress),
-      false,
-      paint,
-    );
-  }
-
-  @override
-  bool shouldRepaint(CustomPainter oldDelegate) {
-    return true;
-  }
-}
 
 
 

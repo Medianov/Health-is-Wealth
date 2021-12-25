@@ -2,12 +2,12 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/src/provider.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 import 'package:untitled/search.dart';
-
+import 'package:untitled/sportart.dart';
 import 'DatabaseManager.dart';
-import 'Essenclasses.dart';
+import 'essencards.dart';
+
 import 'auth.dart';
 
 
@@ -48,6 +48,7 @@ class _EssenState extends State<Essen> {
     getData();
     fetchUserInfo();
   }
+
 
 
 
@@ -648,8 +649,6 @@ class _EssenState extends State<Essen> {
                     scrollDirection: Axis.horizontal,
                     child: Row(
                       children: <Widget>[
-
-                        for (int i = 0; i < 7; i++)
                           Padding(
                             padding: EdgeInsets.all(12),
                             child: passendesEssen(),
@@ -673,6 +672,7 @@ class _EssenState extends State<Essen> {
       case 1:
         return Row(
           children: [
+
             Card(
               clipBehavior: Clip.antiAlias,
               shape: RoundedRectangleBorder(
@@ -683,54 +683,284 @@ class _EssenState extends State<Essen> {
                   Stack(
                     children: [
                       Ink.image(
-                        image: AssetImage('assets/Fit.jpg'),
+                        image: AssetImage('assets/essenabnahme1.jpg'),
                         height: 160,
-                        width: 150,
+                        width: 162,
                         fit: BoxFit.cover,
                       ),
-                      Positioned(
-                        bottom: 16,
-                        right: 16,
-                        left: 16,
+                    ],
+
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(6.0),
+                    child: Container(
+                      color: Colors.white,
+                      width: 150,
+                      height:60,
+                      child: Center(
                         child: Text(
-                          'Gesund1',
+                          'Vegetable Skewers of Olives,Tomatoes,and Monterey Jack Cheese',
                           style: TextStyle(
+                            fontSize: 15.0,
                             fontWeight: FontWeight.bold,
                             color: Colors.black,
-                            fontSize: 24,
                           ),
                         ),
                       ),
-                    ],
-                  ),
-                  Padding(
-                    padding: EdgeInsets.all(16).copyWith(bottom: 0),
-                    child: Text(
-                      'abnahme',
-                      style: TextStyle(fontSize: 16),
                     ),
                   ),
-                  ButtonBar(
-                    alignment: MainAxisAlignment.start,
-                    children: [
-                      FlatButton(
-                        child: Text('gut'),
-                        onPressed: () {},
-                      ),
-                      FlatButton(
-                        child: Text('schlecht'),
-                        onPressed: () {},
-                      )
-                    ],
-                  )
+
+                  TextButton(
+                    child: Text('mehr'),
+                    onPressed: (){Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => essenabnahme1()));},
+                  ),
+
                 ],
               ),
+              margin: EdgeInsets.only(left: 20.0, right: 20.0,top : 5.0),
+            ),
+            Card(
+              clipBehavior: Clip.antiAlias,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(24),
+              ),
+              child: Column(
+                children: [
+                  Stack(
+                    children: [
+                      Ink.image(
+                        image: AssetImage('assets/essenabnahme2.jpg'),
+                        height: 160,
+                        width: 162,
+                        fit: BoxFit.cover,
+                      ),
+                    ],
+
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(6.0),
+                    child: Container(
+                      color: Colors.white,
+                      width: 150,
+                      height:60,
+                      child: Center(
+                        child: Text(
+                          'Chinese Chicken Salad PROTEIN',
+                          style: TextStyle(
+                            fontSize: 15.0,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.black,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+
+                  TextButton(
+                    child: Text('mehr'),
+                    onPressed: (){Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => essenabnahme2()));},
+                  ),
+
+                ],
+              ),
+              margin: EdgeInsets.only(left: 20.0, right: 20.0,top : 5.0),
+            ),
+            Card(
+              clipBehavior: Clip.antiAlias,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(24),
+              ),
+              child: Column(
+                children: [
+                  Stack(
+                    children: [
+                      Ink.image(
+                        image: AssetImage('assets/essenabnahme3.jpg'),
+                        height: 160,
+                        width: 162,
+                        fit: BoxFit.cover,
+                      ),
+                    ],
+
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(6.0),
+                    child: Container(
+                      color: Colors.white,
+                      width: 150,
+                      height:60,
+                      child: Center(
+                        child: Text(
+                          'BBQ Chicken Salad',
+                          style: TextStyle(
+                            fontSize: 15.0,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.black,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+
+                  TextButton(
+                    child: Text('mehr'),
+                    onPressed: (){Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => essenabnahme3()));},
+                  ),
+
+                ],
+              ),
+              margin: EdgeInsets.only(left: 20.0, right: 20.0,top : 5.0),
+            ),
+            Card(
+              clipBehavior: Clip.antiAlias,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(24),
+              ),
+              child: Column(
+                children: [
+                  Stack(
+                    children: [
+                      Ink.image(
+                        image: AssetImage('assets/essenabnahme4.jpg'),
+                        height: 160,
+                        width: 162,
+                        fit: BoxFit.cover,
+                      ),
+                    ],
+
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(6.0),
+                    child: Container(
+                      color: Colors.white,
+                      width: 150,
+                      height:60,
+                      child: Center(
+                        child: Text(
+                          'Hearts of Romaine with Balsamic Vinegar and Shallots',
+                          style: TextStyle(
+                            fontSize: 15.0,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.black,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+
+                  TextButton(
+                    child: Text('mehr'),
+                    onPressed: (){Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => essenabnahme4()));},
+                  ),
+
+                ],
+              ),
+              margin: EdgeInsets.only(left: 20.0, right: 20.0,top : 5.0),
+            ),
+            Card(
+              clipBehavior: Clip.antiAlias,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(24),
+              ),
+              child: Column(
+                children: [
+                  Stack(
+                    children: [
+                      Ink.image(
+                        image: AssetImage('assets/essenabnahme5.jpg'),
+                        height: 160,
+                        width: 162,
+                        fit: BoxFit.cover,
+                      ),
+                    ],
+
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(6.0),
+                    child: Container(
+                      color: Colors.white,
+                      width: 150,
+                      height:60,
+                      child: Center(
+                        child: Text(
+                          'Orzo Salad with Red Bell Pepper and Fresh Herbs',
+                          style: TextStyle(
+                            fontSize: 15.0,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.black,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+
+                  TextButton(
+                    child: Text('mehr'),
+                    onPressed: (){Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => essenabnahme5()));},
+                  ),
+
+                ],
+              ),
+              margin: EdgeInsets.only(left: 20.0, right: 20.0,top : 5.0),
+            ),
+            Card(
+              clipBehavior: Clip.antiAlias,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(24),
+              ),
+              child: Column(
+                children: [
+                  Stack(
+                    children: [
+                      Ink.image(
+                        image: AssetImage('assets/essenabnahme6.jpg'),
+                        height: 160,
+                        width: 162,
+                        fit: BoxFit.cover,
+                      ),
+                    ],
+
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(6.0),
+                    child: Container(
+                      color: Colors.white,
+                      width: 150,
+                      height:60,
+                      child: Center(
+                        child: Text(
+                          'Salad of Green Beans, Bacon, and Warm Gorgonzola Dressing ',
+                          style: TextStyle(
+                            fontSize: 15.0,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.black,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+
+                  TextButton(
+                    child: Text('mehr'),
+                    onPressed: (){Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => essenabnahme6()));},
+                  ),
+
+                ],
+              ),
+              margin: EdgeInsets.only(left: 20.0, right: 20.0,top : 5.0),
             ),
           ],
         );
       case 2:
         return Row(
           children: [
+
             Card(
               clipBehavior: Clip.antiAlias,
               shape: RoundedRectangleBorder(
@@ -741,48 +971,231 @@ class _EssenState extends State<Essen> {
                   Stack(
                     children: [
                       Ink.image(
-                        image: AssetImage('assets/Fit.jpg'),
+                        image: AssetImage('assets/essenbeibehalten1.jpg'),
                         height: 160,
-                        width: 150,
+                        width: 162,
                         fit: BoxFit.cover,
                       ),
-                      Positioned(
-                        bottom: 16,
-                        right: 16,
-                        left: 16,
+                    ],
+
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(6.0),
+                    child: Container(
+                      color: Colors.white,
+                      width: 150,
+                      height:60,
+                      child: Center(
                         child: Text(
-                          'Gesund',
+                          'Oatmeal Buttermilk Pancakes ',
                           style: TextStyle(
+                            fontSize: 15.0,
                             fontWeight: FontWeight.bold,
                             color: Colors.black,
-                            fontSize: 24,
                           ),
                         ),
                       ),
-                    ],
-                  ),
-                  Padding(
-                    padding: EdgeInsets.all(16).copyWith(bottom: 0),
-                    child: Text(
-                      'beibehalten',
-                      style: TextStyle(fontSize: 16),
                     ),
                   ),
-                  ButtonBar(
-                    alignment: MainAxisAlignment.start,
-                    children: [
-                      FlatButton(
-                        child: Text('gut'),
-                        onPressed: () {},
-                      ),
-                      FlatButton(
-                        child: Text('schlecht'),
-                        onPressed: () {},
-                      )
-                    ],
-                  )
+
+                  TextButton(
+                    child: Text('mehr'),
+                    onPressed: (){
+                      Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => essenbeibehalten1()));},
+                  ),
+
                 ],
               ),
+              margin: EdgeInsets.only(left: 20.0, right: 20.0,top : 5.0),
+            ),
+            Card(
+              clipBehavior: Clip.antiAlias,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(24),
+              ),
+              child: Column(
+                children: [
+                  Stack(
+                    children: [
+                      Ink.image(
+                        image: AssetImage('assets/essenbeibehalten2.jpg'),
+                        height: 160,
+                        width: 162,
+                        fit: BoxFit.cover,
+                      ),
+                    ],
+
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(6.0),
+                    child: Container(
+                      color: Colors.white,
+                      width: 150,
+                      height:60,
+                      child: Center(
+                        child: Text(
+                          'Grilled Chicken Breasts with Crisp Bacon and Gouda Cheese ',
+                          style: TextStyle(
+                            fontSize: 15.0,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.black,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+
+                  TextButton(
+                    child: Text('mehr'),
+                    onPressed: (){Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => essenbeibehalten2()));},
+                  ),
+
+                ],
+              ),
+              margin: EdgeInsets.only(left: 20.0, right: 20.0,top : 5.0),
+            ),
+            Card(
+              clipBehavior: Clip.antiAlias,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(24),
+              ),
+              child: Column(
+                children: [
+                  Stack(
+                    children: [
+                      Ink.image(
+                        image: AssetImage('assets/essenbeibehalten3.jpg'),
+                        height: 160,
+                        width: 162,
+                        fit: BoxFit.cover,
+                      ),
+                    ],
+
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(6.0),
+                    child: Container(
+                      color: Colors.white,
+                      width: 150,
+                      height:60,
+                      child: Center(
+                        child: Text(
+                          'Waffles with Fresh Fruit Cream',
+                          style: TextStyle(
+                            fontSize: 15.0,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.black,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+
+                  TextButton(
+                    child: Text('mehr'),
+                    onPressed: (){Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => essenbeibehalten3()));},
+                  ),
+
+                ],
+              ),
+              margin: EdgeInsets.only(left: 20.0, right: 20.0,top : 5.0),
+            ),
+            Card(
+              clipBehavior: Clip.antiAlias,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(24),
+              ),
+              child: Column(
+                children: [
+                  Stack(
+                    children: [
+                      Ink.image(
+                        image: AssetImage('assets/essenbeibehalten4.jpg'),
+                        height: 160,
+                        width: 162,
+                        fit: BoxFit.cover,
+                      ),
+                    ],
+
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(6.0),
+                    child: Container(
+                      color: Colors.white,
+                      width: 150,
+                      height:60,
+                      child: Center(
+                        child: Text(
+                          'Caesar Salad with Grilled Steak',
+                          style: TextStyle(
+                            fontSize: 15.0,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.black,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+
+                  TextButton(
+                    child: Text('mehr'),
+                    onPressed: (){Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => essenbeibehalten4()));},
+                  ),
+
+                ],
+              ),
+              margin: EdgeInsets.only(left: 20.0, right: 20.0,top : 5.0),
+            ),
+            Card(
+              clipBehavior: Clip.antiAlias,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(24),
+              ),
+              child: Column(
+                children: [
+                  Stack(
+                    children: [
+                      Ink.image(
+                        image: AssetImage('assets/essenbeibehalten5.jpg'),
+                        height: 160,
+                        width: 162,
+                        fit: BoxFit.cover,
+                      ),
+                    ],
+
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(6.0),
+                    child: Container(
+                      color: Colors.white,
+                      width: 150,
+                      height:60,
+                      child: Center(
+                        child: Text(
+                          'Cream Cheese French Toast',
+                          style: TextStyle(
+                            fontSize: 15.0,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.black,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+
+                  TextButton(
+                    child: Text('mehr'),
+                    onPressed: (){Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => essenbeibehalten5()));},
+                  ),
+
+                ],
+              ),
+              margin: EdgeInsets.only(left: 20.0, right: 20.0,top : 5.0),
             ),
           ],
         );
@@ -799,7 +1212,7 @@ class _EssenState extends State<Essen> {
                   Stack(
                     children: [
                       Ink.image(
-                        image: AssetImage('assets/1.png'),
+                        image: AssetImage('assets/essenzunahme1.png'),
                         height: 160,
                         width: 162,
                         fit: BoxFit.cover,
@@ -815,7 +1228,103 @@ class _EssenState extends State<Essen> {
                       height:60,
                       child: Center(
                         child: Text(
-                          'Eiweißbrot-Sandwich mit Räuchertofu, Avocado & Sprossen',
+                          'Eiweissbrot-Sandwich mit Raeuchertofu, Avocado & Sprossen',
+                          style: TextStyle(
+                            fontSize: 15.0,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.black,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+
+                  TextButton(
+                    child: Text('mehr'),
+                    onPressed: (){
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => essenzunahme1()));},
+                  ),
+
+                ],
+              ),
+              margin: EdgeInsets.only(left: 20.0, right: 20.0,top : 5.0),
+            ),
+            Card(
+              clipBehavior: Clip.antiAlias,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(24),
+              ),
+              child: Column(
+                children: [
+                  Stack(
+                    children: [
+                      Ink.image(
+                        image: AssetImage('assets/essenzunahme2.png'),
+                        height: 160,
+                        width: 162,
+                        fit: BoxFit.cover,
+                      ),
+                    ],
+
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(6.0),
+                    child: Container(
+                      color: Colors.white,
+                      width: 150,
+                      height:60,
+                      child: Center(
+                        child: Text(
+                          'Griechische Bauernpfanne',
+                          style: TextStyle(
+                            fontSize: 15.0,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.black,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+
+                  TextButton(
+                    child: Text('mehr'),
+                    onPressed: (){
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => essenzunahme2()));},
+                  ),
+
+                ],
+              ),
+              margin: EdgeInsets.only(left: 20.0, right: 20.0,top : 5.0),
+            ),
+            Card(
+              clipBehavior: Clip.antiAlias,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(24),
+              ),
+              child: Column(
+                children: [
+                  Stack(
+                    children: [
+                      Ink.image(
+                        image: AssetImage('assets/essenzunahme3.png'),
+                        height: 160,
+                        width: 162,
+                        fit: BoxFit.cover,
+                      ),
+                    ],
+
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(6.0),
+                    child: Container(
+                      color: Colors.white,
+                      width: 150,
+                      height:60,
+                      child: Center(
+                        child: Text(
+                          'Klassisches Ruehrei',
                           style: TextStyle(
                             fontSize: 15.0,
                             fontWeight: FontWeight.bold,
@@ -829,7 +1338,101 @@ class _EssenState extends State<Essen> {
                   TextButton(
                     child: Text('mehr'),
                     onPressed: (){Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => essenzunahme1()));},
+                        MaterialPageRoute(builder: (context) => essenzunahme3()));},
+                  ),
+
+                ],
+              ),
+              margin: EdgeInsets.only(left: 20.0, right: 20.0,top : 5.0),
+            ),
+            Card(
+              clipBehavior: Clip.antiAlias,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(24),
+              ),
+              child: Column(
+                children: [
+                  Stack(
+                    children: [
+                      Ink.image(
+                        image: AssetImage('assets/essenzunahme4.png'),
+                        height: 160,
+                        width: 162,
+                        fit: BoxFit.cover,
+                      ),
+                    ],
+
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(6.0),
+                    child: Container(
+                      color: Colors.white,
+                      width: 150,
+                      height:60,
+                      child: Center(
+                        child: Text(
+                          'Herzhafte Hackfleisch-Tarte',
+                          style: TextStyle(
+                            fontSize: 15.0,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.black,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+
+                  TextButton(
+                    child: Text('mehr'),
+                    onPressed: (){Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => essenzunahme4()));},
+                  ),
+
+                ],
+              ),
+              margin: EdgeInsets.only(left: 20.0, right: 20.0,top : 5.0),
+            ),
+            Card(
+              clipBehavior: Clip.antiAlias,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(24),
+              ),
+              child: Column(
+                children: [
+                  Stack(
+                    children: [
+                      Ink.image(
+                        image: AssetImage('assets/essenzunahme5.png'),
+                        height: 160,
+                        width: 162,
+                        fit: BoxFit.cover,
+                      ),
+                    ],
+
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(6.0),
+                    child: Container(
+                      color: Colors.white,
+                      width: 150,
+                      height:60,
+                      child: Center(
+                        child: Text(
+                          'Milchreis mit Karamell-Aepfeln',
+                          style: TextStyle(
+                            fontSize: 15.0,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.black,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+
+                  TextButton(
+                    child: Text('mehr'),
+                    onPressed: (){Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => essenzunahme5()));},
                   ),
 
                 ],

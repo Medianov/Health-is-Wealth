@@ -1,8 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:untitled/sportart.dart';
+
 
 
 class DatabaseManager {
@@ -46,31 +45,10 @@ class DatabaseManager {
       'zielkey':zielkey,
     });
   }
-  Future updateUserList2(
-       int schritte,
-       String reichweite,
-       String Kcal,
-      String uid,
-      ) async {
-    String dateString = DateTime.now().toString();
-    var dateTime = DateTime.parse(dateString);
-    var date = "${dateTime.minute}-${dateTime.hour}-${dateTime.minute}-${dateTime.hour}-${dateTime.day}-${dateTime.month}-${dateTime.year}";
-
-    return await user.doc(uid).collection('schrittzaehler Angaben').doc(date).update({
-          'schritte': schritte,
-          'reichweite': reichweite,
-          'Kcal': Kcal,
-    });
-  }
-
-
 
 }
 
-Future updatesteps(int steps
-
-
-    ) async {
+Future updatesteps(int steps) async {
   await Firebase.initializeApp();
   print(steps);
 
@@ -80,24 +58,6 @@ Future updatesteps(int steps
   });
 
 }
-
-Future setUserList2() async {
-  await Firebase.initializeApp();
-  User? user =  FirebaseAuth.instance.currentUser;
-  String dateString = DateTime.now().toString();
-  var dateTime = DateTime.parse(dateString);
-  var date = "${dateTime.minute}-${dateTime.hour}-${dateTime.day}-${dateTime.month}-${dateTime.year}";
-  await FirebaseFirestore.instance.collection("user").doc(user!.uid).collection('schrittzaehler Angaben').doc(date).set(
-      {
-        'schritte': null,
-        'reichweite': null,
-        'Kcal': null,
-
-      }).then((value){
-    print('setUserList2');
-  });
-}
-
 
 
 resetsteps() async {

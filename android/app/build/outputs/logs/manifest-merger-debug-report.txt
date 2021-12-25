@@ -167,7 +167,7 @@ MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Users\md
 	android:label
 		ADDED from C:\Users\mdoab\AndroidStudioProjects\untitled\android\app\src\main\AndroidManifest.xml:11:9-41
 	android:icon
-		ADDED from C:\Users\mdoab\AndroidStudioProjects\untitled\android\app\src\main\AndroidManifest.xml:12:9-43
+		ADDED from C:\Users\mdoab\AndroidStudioProjects\untitled\android\app\src\main\AndroidManifest.xml:12:9-36
 	android:name
 		ADDED from C:\Users\mdoab\AndroidStudioProjects\untitled\android\app\src\main\AndroidManifest.xml:10:8-57
 activity#com.example.untitled.MainActivity

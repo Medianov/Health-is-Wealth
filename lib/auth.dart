@@ -21,23 +21,56 @@ class AuthService {
       return (Fluttertoast.showToast(
           timeInSecForIosWeb: 3,
           msg:
-          "Sie haben sich erfolgreich eingeloggt")).toString();
-    } catch (e) {
-      return(Fluttertoast.showToast(
-          timeInSecForIosWeb: 3,
-          msg:
-          "Diese E-Mail-Adresse hat noch kein Konto oder falsche E-Mail oder Password eingegeben")).toString();
+          'Sie haben sich erfolgreich eingeloggt')).toString();
+    }on FirebaseAuthException catch (e){
+      switch(e.message) {
+        case 'There is no user record corresponding to this identifier. The user may have been deleted.':
+          Fluttertoast.showToast(timeInSecForIosWeb: 3,msg: 'Diese E-Mail-Adresse hat noch kein Konto');
+          break;
+        case 'The password is invalid or the user does not have a password.':
+          Fluttertoast.showToast(timeInSecForIosWeb: 3,msg: 'falsche E-Mail-Adresse oder Passwort eingegeben');
+          break;
+        case 'A network error (such as timeout, interrupted connection or unreachable host) has occurred.':
+          Fluttertoast.showToast(timeInSecForIosWeb: 3,msg: 'Netzwerkfehler');
+          break;
+        case 'The email address is badly formatted.':
+          Fluttertoast.showToast(msg: 'Falsches Format in der E-Mail Adresse');
+          break;
+    }
+
     }
   }
+
+  Future<String?> passwort(String email) async {
+    try {
+      await FirebaseAuth.instance.sendPasswordResetEmail(email: email);
+      return (Fluttertoast.showToast(
+          timeInSecForIosWeb: 5,
+          msg:
+          "Der Link zum Zuruecksetzen des Passworts wurde an Ihre E-Mail gesendet. Bitte verwenden Sie ihn, um das Passwort zu aendern.")).toString();
+    } on FirebaseAuthException catch (e) {
+      switch(e.message) {
+        case 'There is no user record corresponding to this identifier. The user may have been deleted.':
+          Fluttertoast.showToast(timeInSecForIosWeb: 3,msg: 'Diese E-Mail-Adresse hat noch kein Konto');
+          break;
+        case 'The email address is badly formatted.':
+          Fluttertoast.showToast(msg: 'Falsches Format in der E-Mail Adresse');
+          break;
+        case 'A network error (such as timeout, interrupted connection or unreachable host) has occurred.':
+          Fluttertoast.showToast(timeInSecForIosWeb: 3,msg: 'Netzwerkfehler');
+          break;
+      }
+    }
+  }
+
+
 
   Future<String?> signUp(String email, String password) async {
 
     try {
       await _auth.createUserWithEmailAndPassword(
           email: email, password: password).then((value) async {
-        String dateString = DateTime.now().toString();
-        var dateTime = DateTime.parse(dateString);
-        var date = "${dateTime.minute}-${dateTime.hour}-${dateTime.day}-${dateTime.month}-${dateTime.year}";
+
 
         User? user = FirebaseAuth.instance.currentUser;
 
@@ -63,30 +96,29 @@ class AuthService {
               'zielkey':null,
 
             });
-        await FirebaseFirestore.instance.collection("user").doc(user.uid).collection('schrittzaehler Angaben').doc(date).set(
-            {
-              'schritte': null,
-              'reichweite': null,
-              'Kcal': null,
-
-            });
       });
       return (Fluttertoast.showToast(
           timeInSecForIosWeb: 3,
           msg:
           "Glückwunsch, Sie haben ein neues Konto erstellt")).toString() ;
-    } catch (e) {
-      return (Fluttertoast.showToast(
-          timeInSecForIosWeb: 3,
-          msg:
-          "Diese E-Mail-Adresse gehört zu einem anderen Konto")).toString();
+    }on FirebaseAuthException catch (e){
+      switch(e.message) {
+        case 'The email address is already in use by another account.':
+          Fluttertoast.showToast(msg: "Diese E-Mail-Adresse gehört zu einem anderen Konto");
+          break;
+        case 'The email address is badly formatted.':
+          Fluttertoast.showToast(msg: 'Falsches Format in der E-Mail Adresse');
+          break;
+        case 'A network error (such as timeout, interrupted connection or unreachable host) has occurred.':
+          Fluttertoast.showToast(timeInSecForIosWeb: 3,msg: 'Netzwerkfehler');
+          break;
+        case 'Password should be at least 6 characters':
+          Fluttertoast.showToast(timeInSecForIosWeb: 3,msg: 'Das Passwort sollte mindestens 6 Zeichen lang sein');
+          break;
+      }
 
     }
-
   }
 
 
 }
-
-
-

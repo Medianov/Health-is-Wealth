@@ -1,6 +1,9 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:provider/src/provider.dart';
+
+import 'auth.dart';
 
 
 class passwortvergessen extends StatefulWidget {
@@ -12,7 +15,7 @@ class passwortvergessen extends StatefulWidget {
 
 class _passwortvergessenState extends State<passwortvergessen> {
 
-  TextEditingController editController = TextEditingController();
+  TextEditingController emailController = TextEditingController();
   final _key = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
@@ -92,13 +95,13 @@ class _passwortvergessenState extends State<passwortvergessen> {
                           validator: (value) {
                             if (value!.isEmpty) {
                               return 'Dieses Field kann nicht leer sein.';
-                            } else if (!editController.text.contains("@") || !editController.text.contains(".")){
+                            } else if (!emailController.text.contains("@") || !emailController.text.contains(".")){
                               return 'E-mail muss in folgendes Form sein: username@---.---';
                             }
                             return null;
                           },
 
-                          controller: editController,
+                          controller: emailController,
                           style: TextStyle(
                             color: Colors.white,
                           ),
@@ -131,8 +134,12 @@ class _passwortvergessenState extends State<passwortvergessen> {
                             color: Colors.deepPurple,
                             borderRadius: BorderRadius.circular(20)),
                         child: TextButton(
+
                           onPressed: () {
-                            resetPassword(context);
+                            final String email = emailController.text.trim();
+                            context.read<AuthService>().passwort(
+                              email,
+                            );
                             if (_key.currentState!.validate()) {
                             }
 
@@ -155,21 +162,5 @@ class _passwortvergessenState extends State<passwortvergessen> {
       ),
 
     );
-  }
-  void resetPassword(BuildContext context) async {
-    if (editController.text.length == 0 || !editController.text.contains("@")||!editController.text.contains(".")) {
-      Fluttertoast.showToast(
-          timeInSecForIosWeb: 3,
-          msg: "Falsches Format in der E-Mail Adresse");
-      return null;
-    }
-
-    await FirebaseAuth.instance
-        .sendPasswordResetEmail(email: editController.text);
-    Fluttertoast.showToast(
-        timeInSecForIosWeb: 5,
-        msg:
-        "Der Link zum Zuruecksetzen des Passworts wurde an Ihre E-Mail gesendet. Bitte verwenden Sie ihn, um das Passwort zu aendern.");
-
   }
 }
