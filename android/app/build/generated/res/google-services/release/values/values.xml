@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="default_web_client_id" translatable="false">600039372343-a5chhr2l1gcuf9b9dh7t2d7g8fhli8cd.apps.googleusercontent.com</string>
+    <string name="gcm_defaultSenderId" translatable="false">600039372343</string>
+    <string name="google_api_key" translatable="false">AIzaSyDtV-1DBNBDjjyuxuMk0J0ZjID0PoDuMYo</string>
+    <string name="google_app_id" translatable="false">1:600039372343:android:1162843a969d75bb60f1b2</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyDtV-1DBNBDjjyuxuMk0J0ZjID0PoDuMYo</string>
+    <string name="google_storage_bucket" translatable="false">fitnessapp-e296c.appspot.com</string>
+    <string name="project_id" translatable="false">fitnessapp-e296c</string>
+</resources>
