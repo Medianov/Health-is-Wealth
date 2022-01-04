@@ -4,13 +4,23 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:android_alarm_manager/android_alarm_manager.dart';
 import 'package:provider/provider.dart';
-import 'DatabaseManager.dart';
-import 'home.dart';
-import 'package:untitled/login.dart';
-import 'essen.dart';
-import 'new.dart';
-import 'sportart.dart';
-import 'auth.dart';
+import 'package:untitled/screens/sportart.dart';
+import 'service/update_functions+sharedpreferences.dart';
+import 'screens/home.dart';
+import 'package:untitled/authentication_screens/login.dart';
+import 'screens/essen.dart';
+import 'service/auth.dart';
+
+
+
+
+void call_updatesteps ()async{
+
+Sportart().createState().initPlatformState();
+}
+
+
+
 
 
 void main() async {
@@ -20,7 +30,18 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await AndroidAlarmManager.initialize();
 
+
   runApp(MyApp());
+  WidgetsFlutterBinding.ensureInitialized();
+  AndroidAlarmManager.periodic(const Duration(seconds: 1),
+    2,
+    call_updatesteps,
+    wakeup: true,
+    startAt: DateTime(DateTime.now().year, DateTime.now().month, DateTime.now().day, DateTime.now().hour, DateTime.now().minute,1),
+    rescheduleOnReboot: true,
+    exact: true,
+
+  );
  WidgetsFlutterBinding.ensureInitialized();
   AndroidAlarmManager.periodic(const Duration(days: 1),
     1,
@@ -31,16 +52,16 @@ void main() async {
     exact: true,
   );
 
+
+
+
+
+
 }
 
 
 
-
-
-
-
 class MyApp extends StatelessWidget {
-
 
 
   @override
@@ -70,6 +91,7 @@ class AuthWrapper extends StatelessWidget{
 
     if(user != null){
       return Main();
+
     }
     return Login();
   }
@@ -121,14 +143,12 @@ class _MainState extends State<Main> {
           onTap :(index) => setState(()=>this.index=index),
           backgroundColor: Colors.transparent,
           animationCurve: Curves.easeInOut,
-          animationDuration: Duration(microseconds: 900),
+          animationDuration: Duration(milliseconds: 90),
         ),
       ),
     );
   }
 }
-
-
 
 
 

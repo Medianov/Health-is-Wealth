@@ -5,13 +5,15 @@ INJECTED from C:\Users\mdoab\AndroidStudioProjects\untitled\android\app\src\main
 INJECTED from C:\Users\mdoab\AndroidStudioProjects\untitled\android\app\src\main\AndroidManifest.xml:3:1-63:12
 INJECTED from C:\Users\mdoab\AndroidStudioProjects\untitled\android\app\src\main\AndroidManifest.xml:3:1-63:12
 MERGED from C:\Users\mdoab\AndroidStudioProjects\untitled\android\app\src\main\AndroidManifest.xml:3:1-63:12
-MERGED from [:shared_preferences_android] C:\Users\mdoab\AndroidStudioProjects\untitled\build\shared_preferences_android\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-7:12
-MERGED from [:firebase_auth] C:\Users\mdoab\AndroidStudioProjects\untitled\build\firebase_auth\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-15:12
 MERGED from [:firebase_database] C:\Users\mdoab\AndroidStudioProjects\untitled\build\firebase_database\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-15:12
 MERGED from [:cloud_firestore] C:\Users\mdoab\AndroidStudioProjects\untitled\build\cloud_firestore\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-15:12
+MERGED from [:firebase_auth] C:\Users\mdoab\AndroidStudioProjects\untitled\build\firebase_auth\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-15:12
 MERGED from [:firebase_core] C:\Users\mdoab\AndroidStudioProjects\untitled\build\firebase_core\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-15:12
+MERGED from [:platform_device_id] C:\Users\mdoab\AndroidStudioProjects\untitled\build\platform_device_id\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-7:12
 MERGED from [:file_picker] C:\Users\mdoab\AndroidStudioProjects\untitled\build\file_picker\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-17:12
 MERGED from [:flutter_plugin_android_lifecycle] C:\Users\mdoab\AndroidStudioProjects\untitled\build\flutter_plugin_android_lifecycle\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-7:12
+MERGED from [:shared_preferences_android] C:\Users\mdoab\AndroidStudioProjects\untitled\build\shared_preferences_android\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-7:12
+MERGED from [:device_info] C:\Users\mdoab\AndroidStudioProjects\untitled\build\device_info\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-7:12
 MERGED from [:fluttertoast] C:\Users\mdoab\AndroidStudioProjects\untitled\build\fluttertoast\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-7:12
 MERGED from [:pedometer] C:\Users\mdoab\AndroidStudioProjects\untitled\build\pedometer\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-7:12
 MERGED from [:android_alarm_manager] C:\Users\mdoab\AndroidStudioProjects\untitled\build\android_alarm_manager\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-7:12
@@ -61,14 +63,14 @@ MERGED from [androidx.savedstate:savedstate:1.0.0] C:\Users\mdoab\.gradle\caches
 MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] C:\Users\mdoab\.gradle\caches\transforms-2\files-2.1\af5ac34d8217e841163337c0c136aaf0\lifecycle-livedata-2.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] C:\Users\mdoab\.gradle\caches\transforms-2\files-2.1\ad25664bdc2a6562f93cfb70f44807df\lifecycle-livedata-core-2.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\mdoab\.gradle\caches\transforms-2\files-2.1\9dc01f80be5d003ac3d9f81c085f13fd\cursoradapter-1.0.0\AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.arch.core:core-runtime:2.0.0] C:\Users\mdoab\.gradle\caches\transforms-2\files-2.1\ae5cd4776f4503a44a7812883c5a3277\core-runtime-2.0.0\AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Users\mdoab\.gradle\caches\transforms-2\files-2.1\454fd5669506c3ed5fdcf7b2ff03abe6\versionedparcelable-1.1.0\AndroidManifest.xml:17:1-27:12
 MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\mdoab\.gradle\caches\transforms-2\files-2.1\491bbb875d3deba872bb29adb6f841f9\localbroadcastmanager-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [com.google.firebase:firebase-components:17.0.0] C:\Users\mdoab\.gradle\caches\transforms-2\files-2.1\e5f0c7957424a546e9da21a08a739815\jetified-firebase-components-17.0.0\AndroidManifest.xml:15:1-23:12
+MERGED from [androidx.arch.core:core-runtime:2.0.0] C:\Users\mdoab\.gradle\caches\transforms-2\files-2.1\ae5cd4776f4503a44a7812883c5a3277\core-runtime-2.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Users\mdoab\.gradle\caches\transforms-2\files-2.1\454fd5669506c3ed5fdcf7b2ff03abe6\versionedparcelable-1.1.0\AndroidManifest.xml:17:1-27:12
 MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\mdoab\.gradle\caches\transforms-2\files-2.1\0341135a479a1847e64dc720fa73a9d9\documentfile-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.print:print:1.0.0] C:\Users\mdoab\.gradle\caches\transforms-2\files-2.1\8b0cce3f36a1c28e7df6e72849a13547\print-1.0.0\AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] C:\Users\mdoab\.gradle\caches\transforms-2\files-2.1\1d4efdb868696ea36efd004abeb8239d\lifecycle-viewmodel-2.1.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\mdoab\.gradle\caches\transforms-2\files-2.1\11efeec140e47cc964c7b51b01cdd88b\interpolator-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] C:\Users\mdoab\.gradle\caches\transforms-2\files-2.1\1d4efdb868696ea36efd004abeb8239d\lifecycle-viewmodel-2.1.0\AndroidManifest.xml:17:1-22:12
 MERGED from [com.google.firebase:protolite-well-known-types:18.0.0] C:\Users\mdoab\.gradle\caches\transforms-2\files-2.1\073fa8f73d9db3fc6f27ad8d002d7cd7\jetified-protolite-well-known-types-18.0.0\AndroidManifest.xml:2:1-11:12
 MERGED from [io.grpc:grpc-android:1.41.0] C:\Users\mdoab\.gradle\caches\transforms-2\files-2.1\adf0ad4e5cb0b2226216b1b3470356be\jetified-grpc-android-1.41.0\AndroidManifest.xml:2:1-13:12
 INJECTED from C:\Users\mdoab\AndroidStudioProjects\untitled\android\app\src\debug\AndroidManifest.xml:1:1-8:12
@@ -89,11 +91,11 @@ INJECTED from C:\Users\mdoab\AndroidStudioProjects\untitled\android\app\src\debu
 	xmlns:android
 		ADDED from C:\Users\mdoab\AndroidStudioProjects\untitled\android\app\src\main\AndroidManifest.xml:3:11-69
 uses-permission#android.permission.RECEIVE_BOOT_COMPLETED
-ADDED from C:\Users\mdoab\AndroidStudioProjects\untitled\android\app\src\main\AndroidManifest.xml:6:5-80
+ADDED from C:\Users\mdoab\AndroidStudioProjects\untitled\android\app\src\main\AndroidManifest.xml:5:5-80
 	android:name
-		ADDED from C:\Users\mdoab\AndroidStudioProjects\untitled\android\app\src\main\AndroidManifest.xml:6:22-78
+		ADDED from C:\Users\mdoab\AndroidStudioProjects\untitled\android\app\src\main\AndroidManifest.xml:5:22-78
 uses-permission#android.permission.WAKE_LOCK
-ADDED from C:\Users\mdoab\AndroidStudioProjects\untitled\android\app\src\main\AndroidManifest.xml:7:5-67
+ADDED from C:\Users\mdoab\AndroidStudioProjects\untitled\android\app\src\main\AndroidManifest.xml:6:5-67
 MERGED from [com.google.android.gms:play-services-measurement-api:20.0.0] C:\Users\mdoab\.gradle\caches\transforms-2\files-2.1\d8b5451fc82c883313b73938aa29c281\jetified-play-services-measurement-api-20.0.0\AndroidManifest.xml:24:5-68
 MERGED from [com.google.android.gms:play-services-measurement-api:20.0.0] C:\Users\mdoab\.gradle\caches\transforms-2\files-2.1\d8b5451fc82c883313b73938aa29c281\jetified-play-services-measurement-api-20.0.0\AndroidManifest.xml:24:5-68
 MERGED from [com.google.android.gms:play-services-measurement:20.0.0] C:\Users\mdoab\.gradle\caches\transforms-2\files-2.1\8450057caa35aac30a045729c438a3d4\jetified-play-services-measurement-20.0.0\AndroidManifest.xml:25:5-68
@@ -103,19 +105,25 @@ MERGED from [com.google.android.gms:play-services-measurement-impl:20.0.0] C:\Us
 MERGED from [com.google.android.gms:play-services-measurement-sdk-api:20.0.0] C:\Users\mdoab\.gradle\caches\transforms-2\files-2.1\d08bc3c199a6063c33196b5ac214f718\jetified-play-services-measurement-sdk-api-20.0.0\AndroidManifest.xml:25:5-68
 MERGED from [com.google.android.gms:play-services-measurement-sdk-api:20.0.0] C:\Users\mdoab\.gradle\caches\transforms-2\files-2.1\d08bc3c199a6063c33196b5ac214f718\jetified-play-services-measurement-sdk-api-20.0.0\AndroidManifest.xml:25:5-68
 	android:name
-		ADDED from C:\Users\mdoab\AndroidStudioProjects\untitled\android\app\src\main\AndroidManifest.xml:7:22-65
+		ADDED from C:\Users\mdoab\AndroidStudioProjects\untitled\android\app\src\main\AndroidManifest.xml:6:22-65
 uses-permission#android.permission.SCHEDULE_EXACT_ALARM
-ADDED from C:\Users\mdoab\AndroidStudioProjects\untitled\android\app\src\main\AndroidManifest.xml:8:5-78
+ADDED from C:\Users\mdoab\AndroidStudioProjects\untitled\android\app\src\main\AndroidManifest.xml:7:5-78
+	android:name
+		ADDED from C:\Users\mdoab\AndroidStudioProjects\untitled\android\app\src\main\AndroidManifest.xml:7:22-76
+uses-permission#android.permission.ACTIVITY_RECOGNITION
+ADDED from C:\Users\mdoab\AndroidStudioProjects\untitled\android\app\src\main\AndroidManifest.xml:8:5-79
+MERGED from C:\Users\mdoab\AndroidStudioProjects\untitled\android\app\src\main\AndroidManifest.xml:8:5-79
+MERGED from C:\Users\mdoab\AndroidStudioProjects\untitled\android\app\src\main\AndroidManifest.xml:8:5-79
 	android:name
 		ADDED from C:\Users\mdoab\AndroidStudioProjects\untitled\android\app\src\main\AndroidManifest.xml:8:22-76
 application
 ADDED from C:\Users\mdoab\AndroidStudioProjects\untitled\android\app\src\main\AndroidManifest.xml:9:4-62:19
-MERGED from [:firebase_auth] C:\Users\mdoab\AndroidStudioProjects\untitled\build\firebase_auth\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-13:19
-MERGED from [:firebase_auth] C:\Users\mdoab\AndroidStudioProjects\untitled\build\firebase_auth\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-13:19
 MERGED from [:firebase_database] C:\Users\mdoab\AndroidStudioProjects\untitled\build\firebase_database\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-13:19
 MERGED from [:firebase_database] C:\Users\mdoab\AndroidStudioProjects\untitled\build\firebase_database\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-13:19
 MERGED from [:cloud_firestore] C:\Users\mdoab\AndroidStudioProjects\untitled\build\cloud_firestore\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-13:19
 MERGED from [:cloud_firestore] C:\Users\mdoab\AndroidStudioProjects\untitled\build\cloud_firestore\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-13:19
+MERGED from [:firebase_auth] C:\Users\mdoab\AndroidStudioProjects\untitled\build\firebase_auth\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-13:19
+MERGED from [:firebase_auth] C:\Users\mdoab\AndroidStudioProjects\untitled\build\firebase_auth\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-13:19
 MERGED from [:firebase_core] C:\Users\mdoab\AndroidStudioProjects\untitled\build\firebase_core\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-13:19
 MERGED from [:firebase_core] C:\Users\mdoab\AndroidStudioProjects\untitled\build\firebase_core\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-13:19
 MERGED from [com.google.firebase:firebase-analytics:20.0.0] C:\Users\mdoab\.gradle\caches\transforms-2\files-2.1\93b0a1d9f850837cc791e1bdd9d913db\jetified-firebase-analytics-20.0.0\AndroidManifest.xml:7:5-20
@@ -169,7 +177,7 @@ MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Users\md
 	android:icon
 		ADDED from C:\Users\mdoab\AndroidStudioProjects\untitled\android\app\src\main\AndroidManifest.xml:12:9-36
 	android:name
-		ADDED from C:\Users\mdoab\AndroidStudioProjects\untitled\android\app\src\main\AndroidManifest.xml:10:8-57
+		ADDED from C:\Users\mdoab\AndroidStudioProjects\untitled\android\app\src\main\AndroidManifest.xml:10:8-58
 activity#com.example.untitled.MainActivity
 ADDED from C:\Users\mdoab\AndroidStudioProjects\untitled\android\app\src\main\AndroidManifest.xml:13:9-41:20
 	android:launchMode
@@ -242,20 +250,24 @@ uses-sdk
 INJECTED from C:\Users\mdoab\AndroidStudioProjects\untitled\android\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\mdoab\AndroidStudioProjects\untitled\android\app\src\main\AndroidManifest.xml
 INJECTED from C:\Users\mdoab\AndroidStudioProjects\untitled\android\app\src\main\AndroidManifest.xml
-MERGED from [:shared_preferences_android] C:\Users\mdoab\AndroidStudioProjects\untitled\build\shared_preferences_android\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
-MERGED from [:shared_preferences_android] C:\Users\mdoab\AndroidStudioProjects\untitled\build\shared_preferences_android\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
-MERGED from [:firebase_auth] C:\Users\mdoab\AndroidStudioProjects\untitled\build\firebase_auth\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
-MERGED from [:firebase_auth] C:\Users\mdoab\AndroidStudioProjects\untitled\build\firebase_auth\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:firebase_database] C:\Users\mdoab\AndroidStudioProjects\untitled\build\firebase_database\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:firebase_database] C:\Users\mdoab\AndroidStudioProjects\untitled\build\firebase_database\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:cloud_firestore] C:\Users\mdoab\AndroidStudioProjects\untitled\build\cloud_firestore\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:cloud_firestore] C:\Users\mdoab\AndroidStudioProjects\untitled\build\cloud_firestore\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
+MERGED from [:firebase_auth] C:\Users\mdoab\AndroidStudioProjects\untitled\build\firebase_auth\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
+MERGED from [:firebase_auth] C:\Users\mdoab\AndroidStudioProjects\untitled\build\firebase_auth\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:firebase_core] C:\Users\mdoab\AndroidStudioProjects\untitled\build\firebase_core\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:firebase_core] C:\Users\mdoab\AndroidStudioProjects\untitled\build\firebase_core\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
+MERGED from [:platform_device_id] C:\Users\mdoab\AndroidStudioProjects\untitled\build\platform_device_id\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
+MERGED from [:platform_device_id] C:\Users\mdoab\AndroidStudioProjects\untitled\build\platform_device_id\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:file_picker] C:\Users\mdoab\AndroidStudioProjects\untitled\build\file_picker\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:file_picker] C:\Users\mdoab\AndroidStudioProjects\untitled\build\file_picker\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:flutter_plugin_android_lifecycle] C:\Users\mdoab\AndroidStudioProjects\untitled\build\flutter_plugin_android_lifecycle\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:flutter_plugin_android_lifecycle] C:\Users\mdoab\AndroidStudioProjects\untitled\build\flutter_plugin_android_lifecycle\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
+MERGED from [:shared_preferences_android] C:\Users\mdoab\AndroidStudioProjects\untitled\build\shared_preferences_android\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
+MERGED from [:shared_preferences_android] C:\Users\mdoab\AndroidStudioProjects\untitled\build\shared_preferences_android\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
+MERGED from [:device_info] C:\Users\mdoab\AndroidStudioProjects\untitled\build\device_info\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
+MERGED from [:device_info] C:\Users\mdoab\AndroidStudioProjects\untitled\build\device_info\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:fluttertoast] C:\Users\mdoab\AndroidStudioProjects\untitled\build\fluttertoast\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:fluttertoast] C:\Users\mdoab\AndroidStudioProjects\untitled\build\fluttertoast\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:pedometer] C:\Users\mdoab\AndroidStudioProjects\untitled\build\pedometer\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
@@ -354,22 +366,22 @@ MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] C:\Users\mdoab\.g
 MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] C:\Users\mdoab\.gradle\caches\transforms-2\files-2.1\ad25664bdc2a6562f93cfb70f44807df\lifecycle-livedata-core-2.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\mdoab\.gradle\caches\transforms-2\files-2.1\9dc01f80be5d003ac3d9f81c085f13fd\cursoradapter-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\mdoab\.gradle\caches\transforms-2\files-2.1\9dc01f80be5d003ac3d9f81c085f13fd\cursoradapter-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.arch.core:core-runtime:2.0.0] C:\Users\mdoab\.gradle\caches\transforms-2\files-2.1\ae5cd4776f4503a44a7812883c5a3277\core-runtime-2.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.arch.core:core-runtime:2.0.0] C:\Users\mdoab\.gradle\caches\transforms-2\files-2.1\ae5cd4776f4503a44a7812883c5a3277\core-runtime-2.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Users\mdoab\.gradle\caches\transforms-2\files-2.1\454fd5669506c3ed5fdcf7b2ff03abe6\versionedparcelable-1.1.0\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Users\mdoab\.gradle\caches\transforms-2\files-2.1\454fd5669506c3ed5fdcf7b2ff03abe6\versionedparcelable-1.1.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\mdoab\.gradle\caches\transforms-2\files-2.1\491bbb875d3deba872bb29adb6f841f9\localbroadcastmanager-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\mdoab\.gradle\caches\transforms-2\files-2.1\491bbb875d3deba872bb29adb6f841f9\localbroadcastmanager-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [com.google.firebase:firebase-components:17.0.0] C:\Users\mdoab\.gradle\caches\transforms-2\files-2.1\e5f0c7957424a546e9da21a08a739815\jetified-firebase-components-17.0.0\AndroidManifest.xml:19:5-21:41
 MERGED from [com.google.firebase:firebase-components:17.0.0] C:\Users\mdoab\.gradle\caches\transforms-2\files-2.1\e5f0c7957424a546e9da21a08a739815\jetified-firebase-components-17.0.0\AndroidManifest.xml:19:5-21:41
+MERGED from [androidx.arch.core:core-runtime:2.0.0] C:\Users\mdoab\.gradle\caches\transforms-2\files-2.1\ae5cd4776f4503a44a7812883c5a3277\core-runtime-2.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.arch.core:core-runtime:2.0.0] C:\Users\mdoab\.gradle\caches\transforms-2\files-2.1\ae5cd4776f4503a44a7812883c5a3277\core-runtime-2.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Users\mdoab\.gradle\caches\transforms-2\files-2.1\454fd5669506c3ed5fdcf7b2ff03abe6\versionedparcelable-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Users\mdoab\.gradle\caches\transforms-2\files-2.1\454fd5669506c3ed5fdcf7b2ff03abe6\versionedparcelable-1.1.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\mdoab\.gradle\caches\transforms-2\files-2.1\0341135a479a1847e64dc720fa73a9d9\documentfile-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\mdoab\.gradle\caches\transforms-2\files-2.1\0341135a479a1847e64dc720fa73a9d9\documentfile-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.print:print:1.0.0] C:\Users\mdoab\.gradle\caches\transforms-2\files-2.1\8b0cce3f36a1c28e7df6e72849a13547\print-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.print:print:1.0.0] C:\Users\mdoab\.gradle\caches\transforms-2\files-2.1\8b0cce3f36a1c28e7df6e72849a13547\print-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] C:\Users\mdoab\.gradle\caches\transforms-2\files-2.1\1d4efdb868696ea36efd004abeb8239d\lifecycle-viewmodel-2.1.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] C:\Users\mdoab\.gradle\caches\transforms-2\files-2.1\1d4efdb868696ea36efd004abeb8239d\lifecycle-viewmodel-2.1.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\mdoab\.gradle\caches\transforms-2\files-2.1\11efeec140e47cc964c7b51b01cdd88b\interpolator-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\mdoab\.gradle\caches\transforms-2\files-2.1\11efeec140e47cc964c7b51b01cdd88b\interpolator-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] C:\Users\mdoab\.gradle\caches\transforms-2\files-2.1\1d4efdb868696ea36efd004abeb8239d\lifecycle-viewmodel-2.1.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] C:\Users\mdoab\.gradle\caches\transforms-2\files-2.1\1d4efdb868696ea36efd004abeb8239d\lifecycle-viewmodel-2.1.0\AndroidManifest.xml:20:5-44
 MERGED from [com.google.firebase:protolite-well-known-types:18.0.0] C:\Users\mdoab\.gradle\caches\transforms-2\files-2.1\073fa8f73d9db3fc6f27ad8d002d7cd7\jetified-protolite-well-known-types-18.0.0\AndroidManifest.xml:7:5-9:41
 MERGED from [com.google.firebase:protolite-well-known-types:18.0.0] C:\Users\mdoab\.gradle\caches\transforms-2\files-2.1\073fa8f73d9db3fc6f27ad8d002d7cd7\jetified-protolite-well-known-types-18.0.0\AndroidManifest.xml:7:5-9:41
 MERGED from [io.grpc:grpc-android:1.41.0] C:\Users\mdoab\.gradle\caches\transforms-2\files-2.1\adf0ad4e5cb0b2226216b1b3470356be\jetified-grpc-android-1.41.0\AndroidManifest.xml:7:5-9:41
@@ -402,16 +414,12 @@ MERGED from [com.google.android.gms:play-services-measurement-sdk-api:20.0.0] C:
 MERGED from [com.google.android.gms:play-services-measurement-sdk-api:20.0.0] C:\Users\mdoab\.gradle\caches\transforms-2\files-2.1\d08bc3c199a6063c33196b5ac214f718\jetified-play-services-measurement-sdk-api-20.0.0\AndroidManifest.xml:23:5-67
 	android:name
 		ADDED from C:\Users\mdoab\AndroidStudioProjects\untitled\android\app\src\debug\AndroidManifest.xml:6:22-64
-uses-permission#android.permission.ACTIVITY_RECOGNITION
-ADDED from C:\Users\mdoab\AndroidStudioProjects\untitled\android\app\src\debug\AndroidManifest.xml:7:5-79
-	android:name
-		ADDED from C:\Users\mdoab\AndroidStudioProjects\untitled\android\app\src\debug\AndroidManifest.xml:7:22-76
 service#com.google.firebase.components.ComponentDiscoveryService
-ADDED from [:firebase_auth] C:\Users\mdoab\AndroidStudioProjects\untitled\build\firebase_auth\intermediates\library_manifest\debug\AndroidManifest.xml:8:9-12:19
-MERGED from [:firebase_database] C:\Users\mdoab\AndroidStudioProjects\untitled\build\firebase_database\intermediates\library_manifest\debug\AndroidManifest.xml:8:9-12:19
-MERGED from [:firebase_database] C:\Users\mdoab\AndroidStudioProjects\untitled\build\firebase_database\intermediates\library_manifest\debug\AndroidManifest.xml:8:9-12:19
+ADDED from [:firebase_database] C:\Users\mdoab\AndroidStudioProjects\untitled\build\firebase_database\intermediates\library_manifest\debug\AndroidManifest.xml:8:9-12:19
 MERGED from [:cloud_firestore] C:\Users\mdoab\AndroidStudioProjects\untitled\build\cloud_firestore\intermediates\library_manifest\debug\AndroidManifest.xml:8:9-12:19
 MERGED from [:cloud_firestore] C:\Users\mdoab\AndroidStudioProjects\untitled\build\cloud_firestore\intermediates\library_manifest\debug\AndroidManifest.xml:8:9-12:19
+MERGED from [:firebase_auth] C:\Users\mdoab\AndroidStudioProjects\untitled\build\firebase_auth\intermediates\library_manifest\debug\AndroidManifest.xml:8:9-12:19
+MERGED from [:firebase_auth] C:\Users\mdoab\AndroidStudioProjects\untitled\build\firebase_auth\intermediates\library_manifest\debug\AndroidManifest.xml:8:9-12:19
 MERGED from [:firebase_core] C:\Users\mdoab\AndroidStudioProjects\untitled\build\firebase_core\intermediates\library_manifest\debug\AndroidManifest.xml:8:9-12:19
 MERGED from [:firebase_core] C:\Users\mdoab\AndroidStudioProjects\untitled\build\firebase_core\intermediates\library_manifest\debug\AndroidManifest.xml:8:9-12:19
 MERGED from [com.google.firebase:firebase-auth:21.0.1] C:\Users\mdoab\.gradle\caches\transforms-2\files-2.1\cb85e813550ceb859d5d8655b705694f\jetified-firebase-auth-21.0.1\AndroidManifest.xml:74:9-80:19
@@ -433,13 +441,7 @@ MERGED from [com.google.firebase:firebase-common:20.0.0] C:\Users\mdoab\.gradle\
 	android:directBootAware
 		ADDED from [com.google.firebase:firebase-common:20.0.0] C:\Users\mdoab\.gradle\caches\transforms-2\files-2.1\e8c12af64c0d197211b7d090cb61cdf8\jetified-firebase-common-20.0.0\AndroidManifest.xml:35:13-43
 	android:name
-		ADDED from [:firebase_auth] C:\Users\mdoab\AndroidStudioProjects\untitled\build\firebase_auth\intermediates\library_manifest\debug\AndroidManifest.xml:8:18-89
-meta-data#com.google.firebase.components:io.flutter.plugins.firebase.auth.FlutterFirebaseAuthRegistrar
-ADDED from [:firebase_auth] C:\Users\mdoab\AndroidStudioProjects\untitled\build\firebase_auth\intermediates\library_manifest\debug\AndroidManifest.xml:9:13-11:85
-	android:value
-		ADDED from [:firebase_auth] C:\Users\mdoab\AndroidStudioProjects\untitled\build\firebase_auth\intermediates\library_manifest\debug\AndroidManifest.xml:11:17-82
-	android:name
-		ADDED from [:firebase_auth] C:\Users\mdoab\AndroidStudioProjects\untitled\build\firebase_auth\intermediates\library_manifest\debug\AndroidManifest.xml:10:17-124
+		ADDED from [:firebase_database] C:\Users\mdoab\AndroidStudioProjects\untitled\build\firebase_database\intermediates\library_manifest\debug\AndroidManifest.xml:8:18-89
 meta-data#com.google.firebase.components:io.flutter.plugins.firebase.database.FlutterFirebaseAppRegistrar
 ADDED from [:firebase_database] C:\Users\mdoab\AndroidStudioProjects\untitled\build\firebase_database\intermediates\library_manifest\debug\AndroidManifest.xml:9:13-11:85
 	android:value
@@ -452,6 +454,12 @@ ADDED from [:cloud_firestore] C:\Users\mdoab\AndroidStudioProjects\untitled\buil
 		ADDED from [:cloud_firestore] C:\Users\mdoab\AndroidStudioProjects\untitled\build\cloud_firestore\intermediates\library_manifest\debug\AndroidManifest.xml:11:17-82
 	android:name
 		ADDED from [:cloud_firestore] C:\Users\mdoab\AndroidStudioProjects\untitled\build\cloud_firestore\intermediates\library_manifest\debug\AndroidManifest.xml:10:17-134
+meta-data#com.google.firebase.components:io.flutter.plugins.firebase.auth.FlutterFirebaseAuthRegistrar
+ADDED from [:firebase_auth] C:\Users\mdoab\AndroidStudioProjects\untitled\build\firebase_auth\intermediates\library_manifest\debug\AndroidManifest.xml:9:13-11:85
+	android:value
+		ADDED from [:firebase_auth] C:\Users\mdoab\AndroidStudioProjects\untitled\build\firebase_auth\intermediates\library_manifest\debug\AndroidManifest.xml:11:17-82
+	android:name
+		ADDED from [:firebase_auth] C:\Users\mdoab\AndroidStudioProjects\untitled\build\firebase_auth\intermediates\library_manifest\debug\AndroidManifest.xml:10:17-124
 meta-data#com.google.firebase.components:io.flutter.plugins.firebase.core.FlutterFirebaseCoreRegistrar
 ADDED from [:firebase_core] C:\Users\mdoab\AndroidStudioProjects\untitled\build\firebase_core\intermediates\library_manifest\debug\AndroidManifest.xml:9:13-11:85
 	android:value
