@@ -413,7 +413,7 @@ class _EssenState extends State<Essen> {
                           padding: EdgeInsets.symmetric(
                               vertical: 10.0, horizontal: 5.0),
                           child: Text(
-                            'Ziel Calorie:',
+                            'Zielkalorien:',
                             style: TextStyle(
                               fontSize: 18.0,
                               fontWeight: FontWeight.w700,
