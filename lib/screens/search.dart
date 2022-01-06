@@ -45,20 +45,24 @@ class _Search extends State<Search> {
           Flexible(
 
 
-            child: TextField(
-              controller: controller,
-              autofocus: false,
-              decoration: InputDecoration(
-                labelText: 'Search Something',
-                filled: true,
-                fillColor: Colors.white,
-                enabledBorder: UnderlineInputBorder(
-                  borderRadius: BorderRadius.circular(20),
-                  borderSide: BorderSide(color: Colors.white),
-                ),
-                focusedBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(20),
-                  borderSide: BorderSide(color: Colors.white),
+            child: Padding(
+              padding: const EdgeInsets.all(6.0),
+              child: TextField(
+                controller: controller,
+                autofocus: false,
+                decoration: InputDecoration(
+                  labelText: 'Suchen',
+                  filled: true,
+                  fillColor: Colors.white,
+                  enabledBorder: UnderlineInputBorder(
+                    borderRadius: BorderRadius.circular(20),
+                    borderSide: BorderSide(color: Colors.white),
+                  ),
+                  focusedBorder: OutlineInputBorder(
+
+                    borderRadius: BorderRadius.circular(20),
+                    borderSide: BorderSide(color: Colors.white),
+                  ),
                 ),
               ),
             ),

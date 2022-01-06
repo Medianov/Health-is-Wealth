@@ -121,7 +121,7 @@ class _HomeState extends State<Home> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        'Alte Angaben:',
+                        'Ihre alten Angaben:',
                         style: TextStyle(
 
                           fontSize: 18.0,
@@ -388,7 +388,7 @@ class _HomeState extends State<Home> {
                       padding:
                       EdgeInsets.symmetric(vertical: 10.0, horizontal: 5.0),
                       child: Text(
-                        'Ihre Angaben:',
+                        'Ihre Angaben: ',
                         style: TextStyle(
                           shadows: [
                             Shadow(
@@ -644,6 +644,22 @@ class _HomeState extends State<Home> {
                     SizedBox(
                       height: 30,
                     ),
+                    Text(
+                      'Bitte geben Sie Ihre Angaben an:',
+                      style: TextStyle(
+                        shadows: [
+                          Shadow(
+                            offset: Offset(2.0, 2.0),
+                            blurRadius: 3.0,
+                            color: Colors.black,
+                          ),
+                        ],
+                        fontSize: 18.0,
+                        fontWeight: FontWeight.w700,
+                        letterSpacing: 2.0,
+                        color: Colors.white,
+                      ),
+                    ),
                     Padding(
                       padding:
                       EdgeInsets.symmetric(vertical: 10.0, horizontal: 5.0),
@@ -664,6 +680,8 @@ class _HomeState extends State<Home> {
                         ),
                       ),
                     ),
+
+
                     SizedBox(
                       height: 30,
                     ),

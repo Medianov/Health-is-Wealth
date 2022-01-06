@@ -118,7 +118,7 @@ class _SportartState extends State<Sportart> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          'Alte Angaben:',
+                          'Ihre alten Angaben:',
                           style: TextStyle(
 
                             fontSize: 18.0,

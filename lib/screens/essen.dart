@@ -90,7 +90,7 @@ class _EssenState extends State<Essen> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      'Alte Angaben:',
+                      'Ihre alten Angaben:',
                       style: TextStyle(
 
                         fontSize: 18.0,
