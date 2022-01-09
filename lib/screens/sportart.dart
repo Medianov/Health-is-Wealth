@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import '../cards/sportcards.dart';
 import 'package:intl/intl.dart';
@@ -53,12 +54,17 @@ class _SportartState extends State<Sportart> {
   String db_alter ='';
   String db_email='';
   String userID='';
+  String altUserId='';
 
   int neusteps= 0;
   int _steps = 0;
   int savedsteps=0;
+  int cache =0;
+  int cachepreferences=0;
   String reichweite = '0';
   String kalorie = '0';
+
+
 
 
 
@@ -69,6 +75,9 @@ class _SportartState extends State<Sportart> {
     fetchUserInfo();
     getData();
     initPlatformState();
+
+
+
 
   }
 
@@ -396,7 +405,7 @@ class _SportartState extends State<Sportart> {
 
 
                                     Text(
-                                      'Angaben für:',
+                                      'Angaben für: ',
                                       style: TextStyle(
                                         shadows: [
                                           Shadow(
@@ -754,8 +763,6 @@ class _SportartState extends State<Sportart> {
     userID = user!.uid;
     await FirebaseFirestore.instance.collection("user").doc(user.uid).get().then((db){
 
-
-
       return [
         db.data()!['Aktivitaet']== null ? db_Aktivitaet = '--' : db_Aktivitaet = db.data()!['Aktivitaet'],
         db.data()!['groesse in Cm']== null ? db_groesse = '0.0' : db_groesse = db.data()!['groesse in Cm'] ,
@@ -764,7 +771,6 @@ class _SportartState extends State<Sportart> {
         db.data()!['ziel']== null ? db_ziel = '--' : db_ziel = db.data()!['ziel'] ,
         db.data()!['gewicht in Kg']== null ? db_gewicht = '0.0' : db_gewicht = db.data()!['gewicht in Kg'] ,
         db.data()!['zielkey']== null ? ziel = '0' : ziel = db.data()!['zielkey'] ,
-
       ];
     });
 
@@ -774,33 +780,67 @@ class _SportartState extends State<Sportart> {
 
 
   void onStepCount(StepCount event) async{
+    await Firebase.initializeApp();
     final SharedPreferences pref = await SharedPreferences.getInstance();
-    print(event);
+    User? user =  FirebaseAuth.instance.currentUser;
+    userID = user!.uid;
+    String dateString = DateTime.now().toString();
+    var dateTime = DateTime.parse(dateString);
+    var datum = "${dateTime.day}-${dateTime.month}-${dateTime.year}";
+    await FirebaseFirestore.instance.collection("user").doc(userID).get().then((db){
+      return db.data()!['Schritte am']['$datum'] == null ? cache = 0 : cache =db.data()!['Schritte am']['$datum'];
+    });
 
+    print(event);
+    int neu;
     _steps = event.steps;
+
+    //Handy schritte werden gespeichert, um aufgerufen zu werden (wenn neue User kommt oder wenn der Tag vorbei ist)
     setkurz(event.steps);
 
+    //wenn cache geleert wurde und Handy heruntergefahren und neugestartet wurde (zusammen)
+    pref.getInt('savedsteps')== null ? setcache(cache) : savedsteps = pref.getInt('savedsteps')!;
+    //wenn cache geleert wurde
+    pref.getInt('savedsteps')== null ? setsteps(_steps)  : savedsteps = pref.getInt('savedsteps')!;
+    pref.getString('saveId')== null ? setuserid(userID) : altUserId = pref.getString('saveId')!;
 
 
-
-
-    savedsteps = pref.getInt('savedsteps')!;
-
-    if(savedsteps > _steps){
-
-      setsteps(_steps);
-      neusteps == 0;
-      print('steps is 0');
+    //wenn neue User kommt
+    if(altUserId != userID){
+      setcache(cache);
+      setuserid(userID);
+      resetsteps();
     }
 
+    //wenn Handy heruntergefahren wurde
+    if(savedsteps > _steps){
+      setcache(cache);
+      setsteps(_steps);
+    }
+    //wenn keine neue schritte gezählt wird, nachdem Handy starten
+    if(savedsteps == _steps){
+      setcache(cache);
+    }
+    //wenn cache geleert wurde und die Function cache_schritte_leeren() wird aufgerufen (wenn der Tag vorbei ist)
+    pref.getInt('cache')== null ? cachepreferences =0 : cachepreferences = pref.getInt('cache')!;
 
-    int neu = _steps - savedsteps;
+
+    altUserId != userID || savedsteps > _steps? neu = 0 :  neu = _steps -  savedsteps + cachepreferences;
+    //wenn keine neue schritte gezählt wird (wenn cache geleert wurde und Handy heruntergefahren und neugestartet wurde *zusammen*)
+    if(_steps > savedsteps && pref.getInt('savedsteps') != null){
+      Update_Cache_Schritte(neu);
+    }
+
     neusteps = neu ;
     double km = (neusteps* 0.77);
     String r = km.toStringAsFixed(2);
     double kcal = (neusteps*0.039);
     String k = kcal.toStringAsFixed(2);
-    Update_User_Schritte(neu,r,k);
+    //wenn keine neue schritte gezählt wird (wenn cache geleert wurde und Handy heruntergefahren und neugestartet wurde  *zusammen*)
+    if(_steps > savedsteps && pref.getInt('savedsteps') != null){
+      Update_User_Schritte(neu,r,k);
+    }
+
     reichweite = r;
     kalorie = k;
 

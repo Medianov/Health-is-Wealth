@@ -51,6 +51,15 @@ void main() async {
     rescheduleOnReboot: true,
     exact: true,
   );
+  WidgetsFlutterBinding.ensureInitialized();
+  AndroidAlarmManager.periodic(const Duration(days: 1),
+    3,
+    cache_schritte_leeren,
+    wakeup: true,
+    startAt: DateTime(DateTime.now().year, DateTime.now().month, DateTime.now().day, 23, 59),
+    rescheduleOnReboot: true,
+    exact: true,
+  );
 
 
 

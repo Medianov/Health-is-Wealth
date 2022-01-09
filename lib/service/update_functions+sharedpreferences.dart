@@ -57,13 +57,13 @@ void Update_User_Schritte(int schritte,String reichweite,String kalorien) async 
 
   String dateString = DateTime.now().toString();
   var dateTime = DateTime.parse(dateString);
-  var date = "${dateTime.day}-${dateTime.month}-${dateTime.year}";
+  var datum = "${dateTime.day}-${dateTime.month}-${dateTime.year}";
 
   if (user != null) {
     await FirebaseFirestore.instance
         .collection('user')
         .doc(user.uid)
-        .collection('Schritte_mit_Datum').doc('$date')
+        .collection('Schritte_mit_Datum').doc('$datum')
         .set({
     });
   }
@@ -73,7 +73,7 @@ void Update_User_Schritte(int schritte,String reichweite,String kalorien) async 
   await FirebaseFirestore.instance
       .collection('user')
       .doc(user!.uid)
-      .collection('Schritte_mit_Datum').doc('$date')
+      .collection('Schritte_mit_Datum').doc('$datum')
       .update({
     'Schritte': schritte,
     'Reichweite in m': reichweite,
@@ -84,7 +84,33 @@ void Update_User_Schritte(int schritte,String reichweite,String kalorien) async 
 
 
 
+void Update_Cache_Schritte(int schritte_cache) async {
+  print('Update_Cache_Schritte');
 
+
+  await Firebase.initializeApp();
+  User? user = await  FirebaseAuth.instance.currentUser;
+
+  String dateString = DateTime.now().toString();
+  var dateTime = DateTime.parse(dateString);
+  var datum = "${dateTime.day}-${dateTime.month}-${dateTime.year}";
+
+  await FirebaseFirestore.instance
+      .collection('user')
+      .doc(user!.uid)
+      .update({
+    'Schritte am':
+        {'$datum':schritte_cache},
+  });
+
+}
+
+
+
+void cache_schritte_leeren()async {
+  final SharedPreferences pref = await SharedPreferences.getInstance();
+  await pref.remove('cache');
+}
 
 
 void resetsteps() async {
@@ -117,3 +143,7 @@ Future<void> setNotesData(getvalue) async {
   pref.setString('values',getvalue);
 }
 
+Future<void> setcache(Cache) async {
+  final SharedPreferences pref = await SharedPreferences.getInstance();
+  pref.setInt('cache',Cache);
+}

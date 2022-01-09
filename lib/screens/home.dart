@@ -2,7 +2,6 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 import 'package:provider/provider.dart';
 import 'dart:core';
 import '../service/update_functions+sharedpreferences.dart';
@@ -55,17 +54,19 @@ class _HomeState extends State<Home> {
   String db_alter ='';
   String db_email='';
   String userID='';
-  String altUserId='';
+
   
   @override
   void initState() {
     super.initState();
     fetchUserInfo();
-    getNots();
     getData();
 
   }
-  
+
+
+
+
   @override
   Widget build(BuildContext context) {
     List<KeyValueModel> aktivitaetlist = [
@@ -1098,11 +1099,7 @@ class _HomeState extends State<Home> {
       ];
     });
 
-    if(altUserId != userID){
-      setuserid(userID);
-      resetsteps();
-      print('steps is 0');
-    }
+
 
 
 
@@ -1111,12 +1108,7 @@ class _HomeState extends State<Home> {
     });
     
   }
-  void getNots() async {
-    final SharedPreferences pref = await SharedPreferences.getInstance();
-    setState(() {
-      altUserId = pref.getString('saveId')!;
-    });
-  }
+
 
   Update(BuildContext context) {
     DatabaseManager().updateUserList(

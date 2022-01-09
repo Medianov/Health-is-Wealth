@@ -79,7 +79,7 @@ class AuthService {
 
         String dateString = DateTime.now().toString();
         var dateTime = DateTime.parse(dateString);
-        var date = "${dateTime.day}-${dateTime.month}-${dateTime.year}";
+        var datum = "${dateTime.day}-${dateTime.month}-${dateTime.year}";
 
 
         await FirebaseFirestore.instance.collection("user").doc(user!.uid).set(
@@ -101,13 +101,15 @@ class AuthService {
               'geschlecht':null,
               'ziel': null,
               'zielkey':null,
+              'Schritte am':
+              {'$datum':null},
 
 
             });
           await FirebaseFirestore.instance
               .collection('user')
               .doc(user.uid)
-              .collection('Schritte_mit_Datum').doc('$date')
+              .collection('Schritte_mit_Datum').doc('$datum')
               .set({'Schritte': null, 'Reichweite in m': null, 'Kalorien':null});
 
 
