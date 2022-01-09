@@ -1,17 +1,11 @@
-# untitled
+# Health is wealth
 
-A new Flutter project.
+Die Health is wealth App hilft dir ein gesünderes Leben zu führen.
+Funtkionen der health is wealth App sind:
+* eine individuelle Berechnungsmöglichkeit, um gezielt Vorschläge erstellen zu können
+* Ein Schrittzähler mit Verlauf, um dich aktiver zu halten
+* eine Lebensmitteltabelle, um schnell Nährwerte zu ermitteln
+* individuell angepasste Rezepte, um dein Kahlorienbedarf zu ereichen
 
-## Getting Started
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
-"# Health-App" 
